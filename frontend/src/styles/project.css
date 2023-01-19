@@ -1,0 +1,23 @@
+button.elevation {
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 60px 100px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 10px 13px -7px #000000, 0px 0px 60px 100px rgba(0, 0, 0, 0.35);
+}
+img.elevation {
+  -webkit-filter: drop-shadow(0px 60px 100px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0px 60px 100px rgba(0, 0, 0, 0.35));
+}
+
+article {
+  margin-top: 32px;
+}
+
+article h1 {
+  font-size: 72px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 700;
+}

@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Davidas';
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src: url(/fonts/Davidas.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Grover';
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url(/fonts/GroverRegular.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Grover';
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  src: url(/fonts/GroverSemiBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Grover';
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src: url(/fonts/GroverBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Grover';
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+  src: url(/fonts/GroverBlack.ttf) format("truetype");
+}
+
+html,
+body #___gatsby {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#smooth-wrapper {
+  background-color: #0a0908;
+  color: white;
+}
+
+.nav-item {
+  /* transition: all 1s ease; */
+}
+
+.nav-item.active {
+  background-color: #2b2d42;
+  color: #fffcf2;
+}
+
+.accordion-text {
+  font-size: 4em;
+  font-family: 'Davidas';
+  -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+* {
+  font-family: 'Grover';
+}
+
+section p { 
+  font-size: 24px;
+  text-align: justify;
+  margin-bottom: 24px;
+}
+
+h1::selection {
+  background: #fffcf2;
+  color: #2b2d42;
+}
+h2::selection {
+  background: #fffcf2;
+  color: #2b2d42;
+}
+h3::selection {
+  background: #fffcf2;
+  color: #2b2d42;
+}
+p::selection {
+  background: #fffcf2;
+  color: #2b2d42;
+}
