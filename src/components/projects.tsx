@@ -27,7 +27,13 @@ const badgeStyles = {
 
 export function Projects() {
   const [selectedFilters, setSelectedFilters] = useState<Filter[]>([]);
-  const filtersPerType: { [type: string]: Filter[] | undefined } = Object.groupBy(Object.values(filtersData), ({ type }) => type);
+  const filtersPerType: { [type: string]: Filter[] } = Object.values(filtersData).reduce((acc: { [type: string]: Filter[] }, filter: Filter) => {
+    if (!acc[filter.type]) {
+      acc[filter.type] = [];
+    }
+    acc[filter.type].push(filter);
+    return acc;
+  }, {});
   const { filteredExperience, setKeywords } = useExperienceSearch();
 
   const addFilter = (filter: Filter) => {
