@@ -1,0 +1,93 @@
+[
+    {
+        "company": "Vonage",
+        "role": "Senior Frontend Engineer",
+        "baseScore": 10,
+        "startDate": "2023-01-01",
+        "location": "Remote",
+        "highlights": [
+            { "content": "Collaborated in peer programming with junior developers, conducted technical interviews, and performed code reviews to ensure quality and maintain coding standards", "keywords": ["Peer Programming"], "baseScore": 0 }
+        ],
+        "projects": [
+            { 
+                "name": "Dashboard Components Library", 
+                "description": "",
+                "baseScore": 0,
+                "highlights": [
+                    { "keywords": [], "baseScore": 0, "content": ""}
+                ],
+                "stack": []
+            },
+            {
+                "name": "Partner Portal", 
+                "description": "", 
+                "baseScore": 0,
+                "highlights": [
+                    { "keywords": ["Vue.js", "Design System", "Micro Services", "AWS"], "baseScore": 0, "content": "Developed 10+ internal business tools using Vue.js and internal design system (Vivid) for the frontend, a microservices-based backend architecture with Java (Micronaut), and AWS (S3, EC2, Kubernetes with EKS, MySQL with RDS)"}
+                ],
+                "stack": ["Vue.js"]
+            },
+            {
+                "name": "No Code Platform", 
+                "description": "", 
+                "baseScore": 0,
+                "highlights": [
+                    { "keywords": ["No Code"], "baseScore": 0, "content": "Migrated an entire project to an in-house no-code platform, eliminating 20+ security vulnerabilities, removing the need for a separate maintenance project, and reducing cloud costs by 30% (including web server, database and backend)"}
+                ],
+                "stack": [] 
+            },
+            {
+                "name": "Batch Tool",
+                "description": "",
+                "baseScore": 0,
+                "highlights": [
+                    { "keywords": [], "baseScore": 0, "content": ""}
+                ],
+                "stack": [] 
+            }
+        ]
+    },
+    {
+        "company": "Freelance",
+        "role": "Full Stack Developer",
+        "startDate": "2023-01-01",
+        "baseScore": 10,
+        "location": "Remote",
+        "highlights": [
+            { "content": "Produced 3 award-winning projects featuring challenging designs and animations, demonstrating a quick adaptation to new projects and technologies (Awards: 2 Mention of Honor at Awwwards and recognition as 'Site of the Day' at Mindsparkle and CSSWinner", "keywords": ["Design"], "baseScore": 0 },
+            { "content": "Integrated Sentry into all the solutions for the clients, resulting in a significant decrease in errors and boosting customer satisfaction. This allowed for immediate detection and resolution of the server in less than 24 hours", "keywords": ["Monitoring"], "baseScore": 0 },
+            { "content": "Speeded up project set-up time by creating a template repository with git, streamlining the process for new projects. Standardizing build process using webpack", "keywords": [], "baseScore": 0 },
+            { "content": "Strengthened communication among our team of 10 developers and designers and project delivery by integrating the use of agile methodologies and SCRUM-aligned project planning in Asana", "keywords": ["SCRUM"], "baseScore": 0 },
+            { "content": "Implemented a CI/CD process using GitHub Actions to enable automatic updates to the staging area for each commit, resulting in improved development and QA efficiency", "keywords": ["CI/CD"], "baseScore": 0 }
+        ],
+        "projects": [
+            { 
+                "name": "Voice Chatbot", 
+                "description": "Took the initiative to create for the studio a customer-focused chatbot integrated into the studio website, using GSAP for smooth animations and WordPress for content management in the conversational interface", 
+                "baseScore": 0,
+                "highlights": [
+                    {"content": "Created conversational advertising using Google Dialogflow and a custom frontend banner design, achieving a 20% product hit rate", "keywords": [""], "baseScore": 0}
+                ],
+                "stack": ["GSAP", "LLM"]
+            },
+            {
+                "name": "Zanbeek", 
+                "description": "", 
+                "baseScore": 0,
+                "highlights": [
+                    {"content": "", "keywords": [""], "baseScore": 0}
+                ],
+                "stack": [] 
+            },
+            {
+                "name": "Layers", 
+                "description": "",
+                "baseScore": 0,
+                "highlights": [
+                    { "keywords": [], "baseScore": 0, "content": ""}
+                ], 
+                "stack": []
+            }
+        ]
+    }
+]

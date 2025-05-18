@@ -1,12 +1,30 @@
 ---
 import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import { Button } from "@/components/ui/button"
+import { Navbar } from "@/components/navbar";
+import { ArrowDown } from 'lucide-react';
+import { Projects } from "@/components/projects";
 ---
 
+<script is:inline>
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+ 
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+</script>
+ 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -15,11 +33,27 @@ import Button from '../components/Button.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro + TailwindCSS</title>
 	</head>
-
+ 
 	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
+		<Navbar client:load />
+		<div class="grid place-items-center content-center">
+			<div class="w-screen-xl px-4 sm:px-6 lg:px-8">
+				<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Portfolio Example</h1>
+				<p class="leading-7 [&:not(:first-child)]:mt-6">
+					Once upon a time, in a far-off land, there was a very lazy king who
+					spent all day lounging on his throne. One day, his advisors came to him
+					with a problem: the kingdom was running out of money.
+				</p>
+				<div class="flex gap-x-4 mt-6">
+					<Button variant="ghost">
+						<ArrowDown></ArrowDown>
+						View Work
+					</Button>
+					<Button>Get in touch</Button>
+				</div>
+				<h2>Projects</h2>
+				<Projects client:load></Projects>
+			</div>
 		</div>
 	</body>
 </html>

@@ -1,0 +1,13 @@
+{
+    "Vue.js": { "name": "Vue.js", "type": "Frontend Frameworks", "color": "green" },
+    "React": { "name": "React", "type": "Frontend Frameworks", "color": "blue" },
+    "Astro": { "name": "Astro", "type": "Frontend Frameworks", "color": "orange" },
+    "Tailwind": { "name": "Tailwind", "type": "CSS Frameworks", "color": "blue" },
+    "E2E Testing": { "name": "E2E Testing", "type": "Testing", "color": "stone" },
+    "Unit Testing": { "name": "Unit Testing", "type": "Testing", "color": "stone" },
+    "Jest": { "name": "Jest", "type": "Testing", "color": "orange" },
+    "Playwright": { "name": "Playwright", "type": "Testing", "color": "purple" },
+    "Vue Test Utils": { "name": "Vue Test Utils", "type": "Testing", "color": "green" },
+    "Vite": { "name": "Vite", "type": "Build Tools", "color": "purple" },
+    "Webpack": { "name": "Webpack", "type": "Build Tools", "color": "blue" }
+}
