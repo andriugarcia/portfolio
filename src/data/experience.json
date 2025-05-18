@@ -11,39 +11,60 @@
         "projects": [
             { 
                 "name": "Dashboard Components Library", 
-                "description": "",
-                "baseScore": 0,
+                "description": "A Vue library with components using our internal design library to help developers across teams avoid reimplementing the same components for their dashboards.",
+                "baseScore": 10,
                 "highlights": [
-                    { "keywords": [], "baseScore": 0, "content": ""}
+                    { "content": "Created documentation to help developers contribute to or use the library, leveraging PRs to facilitate code reviews.", "keywords": ["Documentation", "Code Reviews"], "baseScore": 10 },
+                    { "content": "Added unit tests and E2E tests using Vue Test Utils and Storybook, enabling developers to reuse components without needing to add additional tests.", "keywords": ["Unit Tests", "E2E Tests", "Vue Test Utils", "Storybook"], "baseScore": 0 },
+                    { "content": "Implemented a CI/CD pipeline to deploy the library upon merging, with the ability to create snapshots for QA.", "keywords": ["CI/CD", "QA", "Snapshots"], "baseScore": 0 }
                 ],
-                "stack": []
+                "stack": ["Vue.js", "Storybook", "Vue Test Utils", "CI/CD"]
             },
             {
                 "name": "Partner Portal", 
-                "description": "", 
-                "baseScore": 0,
+                "description": "Worked on a micro frontend infrastructure for a multi-tenant dashboard for company partners.", 
+                "baseScore": 10,
                 "highlights": [
-                    { "keywords": ["Vue.js", "Design System", "Micro Services", "AWS"], "baseScore": 0, "content": "Developed 10+ internal business tools using Vue.js and internal design system (Vivid) for the frontend, a microservices-based backend architecture with Java (Micronaut), and AWS (S3, EC2, Kubernetes with EKS, MySQL with RDS)"}
+                    { 
+                        "keywords": ["Micro Frontends", "Architecture", "Communication"], 
+                        "baseScore": 10, 
+                        "content": "Designed an architecture for micro frontends across the teams to define how micro frontends should communicate with each other." 
+                    },
+                    { 
+                        "keywords": ["Unit Tests", "Mockito", "Vue Test Utils"], 
+                        "baseScore": 0, 
+                        "content": "Added unit tests on the backend using Mockito and on the frontend using Vue Test Utils to ensure code quality and reliability." 
+                    },
+                    { 
+                        "keywords": ["Microservices", "Backend Development"], 
+                        "baseScore": 0, 
+                        "content": "Developed the backend based on a microservices architecture to support the multi-tenant dashboard." 
+                    }
                 ],
-                "stack": ["Vue.js"]
+                "stack": ["Vue.js", "Mockito", "Vue Test Utils", "Microservices"]
             },
             {
                 "name": "No Code Platform", 
-                "description": "", 
+                "description": "Developed on an internal no-code platform which allows teams to create frontends to interact with different APIs across the company.", 
                 "baseScore": 0,
                 "highlights": [
-                    { "keywords": ["No Code"], "baseScore": 0, "content": "Migrated an entire project to an in-house no-code platform, eliminating 20+ security vulnerabilities, removing the need for a separate maintenance project, and reducing cloud costs by 30% (including web server, database and backend)"}
+                    { 
+                        "keywords": ["No Code", "Platform Design"], 
+                        "baseScore": 0, 
+                        "content": "Designed and developed a second version of the platform to improve the experience of development." 
+                    },
+                    { 
+                        "keywords": ["No Code", "Migration", "Security", "Cost Reduction"], 
+                        "baseScore": 0, 
+                        "content": "Migrated an entire internal tool to our no-code platform, saving cloud costs and increasing security by reducing vulnerabilities." 
+                    },
+                    { 
+                        "keywords": ["No Code", "APIs", "Internal Tools"], 
+                        "baseScore": 0, 
+                        "content": "Migrated an entire project to an in-house no-code platform, eliminating 20+ security vulnerabilities, removing the need for a separate maintenance project, and reducing cloud costs by 30% (including web server, database, and backend)." 
+                    }
                 ],
-                "stack": [] 
-            },
-            {
-                "name": "Batch Tool",
-                "description": "",
-                "baseScore": 0,
-                "highlights": [
-                    { "keywords": [], "baseScore": 0, "content": ""}
-                ],
-                "stack": [] 
+                "stack": ["Vue.js", "No Code", "API"]
             }
         ]
     },
@@ -63,12 +84,21 @@
         "projects": [
             { 
                 "name": "Voice Chatbot", 
-                "description": "Took the initiative to create for the studio a customer-focused chatbot integrated into the studio website, using GSAP for smooth animations and WordPress for content management in the conversational interface", 
+                "description": "Created a company assistant which uses LLM to get context to the company and interacts with end users through voice, designed to recommend and also perform actions like scheduling a call or registering.",
                 "baseScore": 0,
                 "highlights": [
-                    {"content": "Created conversational advertising using Google Dialogflow and a custom frontend banner design, achieving a 20% product hit rate", "keywords": [""], "baseScore": 0}
+                    { 
+                        "content": "Created an extensible infrastructure which allows to easily extend the capabilities of the chatbot for new clients.", 
+                        "keywords": ["Extensible Infrastructure", "Chatbot"], 
+                        "baseScore": 0 
+                    },
+                    { 
+                        "content": "Created a design system for the chatbot which allows performing different animations and transitions during the conversation flow.", 
+                        "keywords": ["Design System", "Animations", "Transitions"], 
+                        "baseScore": 0 
+                    }
                 ],
-                "stack": ["GSAP", "LLM"]
+                "stack": ["React", "Vite", "LLM", "Voice Recognition", "Design System"]
             },
             {
                 "name": "Zanbeek", 
@@ -77,7 +107,7 @@
                 "highlights": [
                     {"content": "", "keywords": [""], "baseScore": 0}
                 ],
-                "stack": [] 
+                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"] 
             },
             {
                 "name": "Layers", 
@@ -86,7 +116,7 @@
                 "highlights": [
                     { "keywords": [], "baseScore": 0, "content": ""}
                 ], 
-                "stack": []
+                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
             }
         ]
     }

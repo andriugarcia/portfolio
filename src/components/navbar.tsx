@@ -14,13 +14,21 @@ import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 
 import { Mail, Linkedin, Github } from "lucide-react"
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 export function Navbar() {
     return (
     <div className="flex items-center justify-between w-full px-4 py-2">
             <div className="flex items-center">
-                <a href="/">
-                    Portfolio
+                <a href="/" className="flex items-center">
+                <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div className="ml-2">
+                    <div>Andriu Garcia</div>
+                    <div>Frontend Developer Making Life easier to users and developers</div>
+                </div>
                 </a>
             </div>
             <div>

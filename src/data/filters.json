@@ -9,5 +9,7 @@
     "Playwright": { "name": "Playwright", "type": "Testing", "color": "purple" },
     "Vue Test Utils": { "name": "Vue Test Utils", "type": "Testing", "color": "green" },
     "Vite": { "name": "Vite", "type": "Build Tools", "color": "purple" },
-    "Webpack": { "name": "Webpack", "type": "Build Tools", "color": "blue" }
+    "Webpack": { "name": "Webpack", "type": "Build Tools", "color": "blue" },
+    "Problem Solving": { "name": "Problem Solving", "type": "Soft Skills", "color": "blue" },
+    "Design System": { "name": "Design System", "type": "Architecture", "color": "purple" }
 }

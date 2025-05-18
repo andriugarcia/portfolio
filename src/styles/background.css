@@ -1,0 +1,38 @@
+.background-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .animated-svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .mask-rect {
+    animation: drawAndErase 6s ease-in-out infinite;
+  }
+  
+  /* Reveal then erase the mask top to bottom (same direction) */
+  @keyframes drawAndErase {
+    0% {
+      y: 100;
+      height: 0;
+    }
+    40% {
+      y: 0;
+      height: 100;
+    }
+    60% {
+      y: 0;
+      height: 100;
+    }
+    100% {
+      y: -100;
+      height: 0;
+    }
+  }
+  

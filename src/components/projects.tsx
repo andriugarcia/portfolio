@@ -5,35 +5,11 @@ import useExperienceSearch from "@/hooks/use-experience-search"
 import type { Filter } from "@/types/filter";
 import { useState } from "react";
 import { X } from "lucide-react";
-
-const badgeStyles = {
-  green: "bg-green-900 text-green-200",
-  blue: "bg-blue-900 text-blue-200",
-  pink: "bg-pink-900 text-pink-200",
-  purple: "bg-purple-900 text-purple-200",
-  red: "bg-red-900 text-red-200",
-  yellow: "bg-yellow-900 text-yellow-200",
-  gray: "bg-gray-900 text-gray-200",
-  orange: "bg-orange-900 text-orange-200",
-  teal: "bg-teal-900 text-teal-200",
-  cyan: "bg-cyan-900 text-cyan-200",
-  indigo: "bg-indigo-900 text-indigo-200",
-  lime: "bg-lime-900 text-lime-200",
-  amber: "bg-amber-900 text-amber-200",
-  emerald: "bg-emerald-900 text-emerald-200",
-  rose: "bg-rose-900 text-rose-200",
-  slate: "bg-slate-900 text-slate-200",
-};
+import { FilterSection } from "./filter-section";
 
 export function Projects() {
   const [selectedFilters, setSelectedFilters] = useState<Filter[]>([]);
-  const filtersPerType: { [type: string]: Filter[] } = Object.values(filtersData).reduce((acc: { [type: string]: Filter[] }, filter: Filter) => {
-    if (!acc[filter.type]) {
-      acc[filter.type] = [];
-    }
-    acc[filter.type].push(filter);
-    return acc;
-  }, {});
+  const filtersPerType: { [type: string]: Filter[] | undefined } = Object.groupBy(Object.values(filtersData), ({ type }) => type);
   const { filteredExperience, setKeywords } = useExperienceSearch();
 
   const addFilter = (filter: Filter) => {
@@ -49,10 +25,10 @@ export function Projects() {
 
   const renderBadge = (filter: Filter | string, dismissible: boolean = false) => {
     if (typeof filter === 'string') {
-      filter = (filtersData as Record<string, Filter>)[filter] ?? { name: filter, type: "others", color: "gray" as keyof typeof badgeStyles };
+      filter = (filtersData as Record<string, Filter>)[filter] ?? { name: filter, type: "others", color: "gray" };
     }
     
-    return (<Badge className={badgeStyles[filter.color as keyof typeof badgeStyles]} onClick={() => addFilter(filter)}>{filter.name} {dismissible ? <X></X> : null}</Badge>)
+    return (<Badge color={filter.color} onClick={() => addFilter(filter)}>{filter.name} {dismissible ? <X></X> : null}</Badge>)
   }
 
   const clearFilters = () => {
@@ -61,27 +37,29 @@ export function Projects() {
   }
 
   return (
-    <Card className="flex-row">
+    <Card className="flex-row h-full overflow-y-scroll">
         <div className="basis-1/4 p-4">
+            <h2 className="text-2xl text-semibold">Stack</h2>
             {
                 Object.entries(filtersPerType).map(([type, filters]) => (
                     <>
-                        <div className="leading-7">{type}</div>
-                        <div className="flex flex-wrap gap-2 mb-2">
-                            {
-                                filters?.map((filter) => renderBadge(filter, false))
-                            }
-                        </div>
+                      {filters && <FilterSection defaultOpen={type === 'Frontend Frameworks'} type={type} filters={filters} onFilterSelected={addFilter} selectedFilters={selectedFilters}></FilterSection>}
                     </>
                 ))
             }
         </div>
         <div className="basis-3/4 p-4">
-            <Card className="flex-row py-2 px-4 gap-2">
-                {selectedFilters.length === 0 ? 'No Filters Selected' : <>
-                { selectedFilters.map((filter) => renderBadge(filter, true)) }
-                <X onClick={clearFilters} className="ml-auto"></X>
-                </>}
+            <h2 className="text-2xl text-semibold">Projects</h2>
+            <Card className="flex flex-row py-2 px-4 items-center">
+             
+
+              
+                {selectedFilters.length === 0 ? 'No Filters Selected' : <><div className="flex flex-row flex-wrap max-w-full gap-2">
+                  { selectedFilters.map((filter) => renderBadge(filter, true)) }
+                </div>
+                  <X onClick={clearFilters} className="ml-auto"></X>
+                </>
+                }
             </Card>
             {
                 filteredExperience.map((experience) => (
@@ -90,7 +68,7 @@ export function Projects() {
                         <ul className="list-disc list-inside">
                             {
                                 experience.highlights.map((highlight) => (
-                                    <li>{highlight.content} {
+                                    <li className="text-pretty">{highlight.content} {
                                       highlight.matchedKeywords.map((kw) => (
                                         <Badge variant="outline" className="text-xs">{kw}</Badge>
                                       ))
@@ -102,6 +80,7 @@ export function Projects() {
                             experience.projects.map((project) => (
                                 <Card className="px-4 mb-4" key={project.name}>
                                     <div className="font-semibold mb-2">{ project.name }</div>
+                                    <p className="mb-2 text-pretty">{ project.description }</p>
                                     <div className="flex gap-2">
                                         {
                                             project.stack.map((tech) => (
@@ -112,7 +91,7 @@ export function Projects() {
                                     <ul className="list-disc list-inside">
                                         {
                                             project.highlights.map((highlight) => (
-                                                <li>{highlight.content} {
+                                                <li className="text-pretty">{highlight.content} {
                                                   highlight.matchedKeywords.map((kw) => (
                                                     <Badge variant="outline" className="text-xs">{kw}</Badge>
                                                   ))
