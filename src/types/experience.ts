@@ -3,6 +3,7 @@ import type { Project, Highlight } from "./project";
 export type Experience = {
     company: string;
     role: string;
+    team?: string;
     location: string;
     startDate: string;
     baseScore: number;

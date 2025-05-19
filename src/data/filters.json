@@ -1,8 +1,13 @@
 {
+    "Vanilla JS": { "name": "Vanilla JS", "type": "Frontend Frameworks", "color": "yellow" },
     "Vue.js": { "name": "Vue.js", "type": "Frontend Frameworks", "color": "green" },
+    "Next.js": { "name": "Next.js", "type": "Frontend Frameworks", "color": "blue" },
     "React": { "name": "React", "type": "Frontend Frameworks", "color": "blue" },
+    "Nuxt.js": { "name": "Nuxt.js", "type": "Frontend Frameworks", "color": "green" },
     "Astro": { "name": "Astro", "type": "Frontend Frameworks", "color": "orange" },
     "Tailwind": { "name": "Tailwind", "type": "CSS Frameworks", "color": "blue" },
+    "Vuex": { "name": "Vuex", "type": "State Management", "color": "green" },
+    "Pinia": { "name": "Pinia", "type": "State Management", "color": "yellow" },
     "E2E Testing": { "name": "E2E Testing", "type": "Testing", "color": "stone" },
     "Unit Testing": { "name": "Unit Testing", "type": "Testing", "color": "stone" },
     "Jest": { "name": "Jest", "type": "Testing", "color": "orange" },
@@ -10,6 +15,14 @@
     "Vue Test Utils": { "name": "Vue Test Utils", "type": "Testing", "color": "green" },
     "Vite": { "name": "Vite", "type": "Build Tools", "color": "purple" },
     "Webpack": { "name": "Webpack", "type": "Build Tools", "color": "blue" },
+    "REST": { "name": "REST", "type": "API", "color": "green" },
+    "Graphql": { "name": "Graphql", "type": "API", "color": "blue" },
+    "GSAP": { "name": "GSAP", "type": "Animations", "color": "red" },
+    "Three.js": { "name": "Three.js", "type": "Animations", "color": "brown" },
+    "Micro Frontends": { "name": "Micro Frontends", "type": "Architecture", "color": "purple" },
+    "WebAssembly": { "name": "WebAssembly", "type": "Architecture", "color": "orange" },
     "Problem Solving": { "name": "Problem Solving", "type": "Soft Skills", "color": "blue" },
-    "Design System": { "name": "Design System", "type": "Architecture", "color": "purple" }
+    "Design System": { "name": "Design System", "type": "Architecture", "color": "purple" },
+    "Code Reviews": { "name": "Code Reviews", "type": "Soft Skills", "color": "grey" },
+    "Documentation": { "name": "Documentation", "type": "Soft Skills", "color": "grey" }
 }

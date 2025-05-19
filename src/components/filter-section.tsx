@@ -27,7 +27,7 @@ export function FilterSection({type, filters, defaultOpen, onFilterSelected, sel
     }
 
     return (
-        <Collapsible defaultOpen={opened} key={type} onOpenChange={setOpen}>
+        <Collapsible className="mb-2" defaultOpen={opened} key={type} onOpenChange={setOpen}>
         <CollapsibleTrigger className="flex items-center gap-2">
           {
             opened ? <ChevronDown size={18}></ChevronDown> : <ChevronRight size={18}></ChevronRight>
@@ -35,7 +35,7 @@ export function FilterSection({type, filters, defaultOpen, onFilterSelected, sel
           <div className="leading-7">{type}</div>
         </CollapsibleTrigger>
         <CollapsibleContent>
-          <div className="flex flex-wrap gap-2 mb-2">
+          <div className="flex flex-wrap gap-2 my-2 ml-6">
               {
                   filters?.map((filter) => renderBadge(filter, selectedFilters.includes(filter)))
               }

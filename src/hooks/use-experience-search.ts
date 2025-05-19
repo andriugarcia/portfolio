@@ -4,7 +4,7 @@ import type { Experience } from "../types/experience";
 import type { Highlight } from "../types/project";
 import experienceData from "@/data/experience.json";
 
-const KEYWORD_MATCH_SCORE = 10;
+const KEYWORD_MATCH_SCORE = 20;
 const MAX_COMPANIES = 2;
 const MAX_PROJECTS = 2;
 const MAX_HIGHLIGHTS = 5;

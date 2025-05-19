@@ -32,8 +32,9 @@ export function Navbar() {
                 </a>
             </div>
             <div>
-                <Button variant="ghost" size="icon">
+                <Button variant="outline">
                     <Mail className="h-4 w-4" />
+                    <div>Get In Touch</div>
                 </Button>
                 <Button variant="ghost" size="icon">
                     <Linkedin className="h-4 w-4" />
@@ -41,7 +42,7 @@ export function Navbar() {
                 <Button variant="ghost" size="icon">
                     <Github className="h-4 w-4" />
                 </Button>
-                <ModeToggle></ModeToggle>
+                {/* <ModeToggle></ModeToggle> */}
             </div>
     </div>
                 );
