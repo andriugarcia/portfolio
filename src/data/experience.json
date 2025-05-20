@@ -4,7 +4,8 @@
         "role": "Senior Frontend Engineer",
         "team": "Customer Dashboard - Frontend Tooling Squad",
         "baseScore": 10,
-        "startDate": "2023-01-01",
+        "startDate": "Aug 2022",
+        "endDate": "present",
         "location": "Remote",
         "highlights": [
             { "content": "Collaborated in peer programming with junior developers, conducted technical interviews, and performed code reviews to ensure quality and maintain coding standards", "keywords": ["Peer Programming"], "baseScore": 0 }
@@ -101,7 +102,8 @@
         "company": "Freelance",
         "role": "Full Stack Developer",
         "team": "",
-        "startDate": "2023-01-01",
+        "startDate": "Aug 2022",
+        "endDate": "Sep 2023",
         "baseScore": 10,
         "location": "Remote",
         "highlights": [

@@ -3,10 +3,11 @@ import filtersData from "@/data/filters.json"
 import useExperienceSearch from "@/hooks/use-experience-search"
 import type { Filter } from "@/types/filter";
 import { useState } from "react";
-import { X, ExternalLink } from "lucide-react";
+import { X, ExternalLink, FileDown } from "lucide-react";
 import { FilterSection } from "./filter-section";
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Card, CardContent } from "@/components/ui/card"
+import generateResumePDF from "@/resume/resume"
+
 import {
   Carousel,
   CarouselContent,
@@ -15,6 +16,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Button } from "./ui/button";
+import { Card } from "./ui/card";
 
 export function Projects() {
   const [selectedFilters, setSelectedFilters] = useState<Filter[]>([]);
@@ -52,23 +54,30 @@ export function Projects() {
   }
 
   return (
-    <Card className="flex-row">
-        <div className="basis-1/4 px-4">
+    <div className="flex flex-row">
+        <div className="basis-180 p-4 border-r-1 border-grey">
             <h2 className="text-2xl font-bold tracking-tight">Stack</h2>
             <p className="text-muted-foreground mb-2">Choose filters to showcase the enhanced experience</p>
-            <ScrollArea className="h-[calc(100vh-246px)] w-full">
-              {
-                  Object.entries(filtersPerType).map(([type, filters]) => (
-                      <>
-                        {filters && <FilterSection defaultOpen={type === 'Frontend Frameworks'} type={type} filters={filters} onFilterSelected={addFilter} selectedFilters={selectedFilters}></FilterSection>}
-                      </>
-                  ))
-              }
-            </ScrollArea>
+            <Card className="p-6">
+              <ScrollArea className="h-[calc(100vh-246px)] w-full">
+                {
+                    Object.entries(filtersPerType).map(([type, filters]) => (
+                        <>
+                          {filters && <FilterSection defaultOpen={type === 'Frontend Frameworks'} type={type} filters={filters} onFilterSelected={addFilter} selectedFilters={selectedFilters}></FilterSection>}
+                        </>
+                    ))
+                }
+              </ScrollArea>
+            </Card>
         </div>
-        <div className="basis-3/4 px-4">
-            <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
-            <p className="text-muted-foreground mb-2">Projects I have worked on as a frontend developer</p>
+        <div className="basis-auto p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
+                <p className="text-muted-foreground mb-2">Projects I have worked on as a frontend developer</p>
+              </div>
+              <Button onClick={() => generateResumePDF(filteredExperience)}>Generate Resume <FileDown></FileDown></Button>
+            </div>
             <Card className="flex flex-row py-2 px-4 items-center mb-6">
                 {selectedFilters.length === 0 ? <div className="text-stone-400">Choose the filters from the stack in the left panel</div> : <><div className="flex flex-row flex-wrap max-w-full gap-2">
                   { selectedFilters.map((filter) => renderBadge(filter, true)) }
@@ -153,6 +162,6 @@ export function Projects() {
               }
             </ScrollArea>
         </div>
-    </Card>
+    </div>
   )
 }

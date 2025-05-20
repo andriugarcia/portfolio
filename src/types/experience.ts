@@ -6,6 +6,7 @@ export type Experience = {
     team?: string;
     location: string;
     startDate: string;
+    endDate: string;
     baseScore: number;
     highlights: Highlight[];
     projects: Project[];
