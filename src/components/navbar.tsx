@@ -32,15 +32,15 @@ export function Navbar() {
                 </a>
             </div>
             <div>
-                <Button variant="outline">
-                    <Mail className="h-4 w-4" />
-                    <div>Get In Touch</div>
-                </Button>
                 <Button variant="ghost" size="icon">
                     <Linkedin className="h-4 w-4" />
                 </Button>
                 <Button variant="ghost" size="icon">
                     <Github className="h-4 w-4" />
+                </Button>
+                <Button className="ml-2">
+                    <Mail className="h-4 w-4" />
+                    <div>Get In Touch</div>
                 </Button>
                 {/* <ModeToggle></ModeToggle> */}
             </div>
