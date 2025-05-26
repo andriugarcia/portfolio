@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge"
 import filtersData from "@/data/filters.json"
 import useExperienceSearch from "@/hooks/use-experience-search"
 import type { Filter } from "@/types/filter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { X, ExternalLink, FileDown } from "lucide-react";
 import { FilterSection } from "./filter-section";
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -29,14 +29,61 @@ export function Projects() {
   }, {});
   const { filteredExperience, setKeywords } = useExperienceSearch();
 
-  const addFilter = (filter: Filter) => {
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const filterParams = url.searchParams.getAll('f');
+    console.log(filterParams);
+    
+    filterParams.forEach((filterParam) => {
+      addFilter(filterParam);
+    });
+  }, []);
+
+  const addQueryParam = (param: string) => {
+    const url = new URL(window.location.href);
+    const params = url.searchParams;
+
+    if (!params.getAll('f').includes(param)) {
+      params.append('f', param);
+      window.history.replaceState({}, '', url);
+    }
+  }
+
+  const removeQueryParam = (valueToRemove: string) => {
+    const url = new URL(window.location.href);
+    const params = url.searchParams;
+  
+    // Get all values for this key
+    const values = params.getAll('f');
+  
+    // Clear the key entirely, then re-add all except the one we want to remove
+    params.delete('f');
+    values
+      .filter(value => value !== valueToRemove)
+      .forEach(value => params.append('f', value));
+  
+    // Update the URL without reloading
+    window.history.replaceState({}, '', url);
+  };
+
+  const addFilter = (filterParam: Filter | string) => {
+let filter: Filter;
+    if (typeof filterParam === 'string') {
+      filter = (filtersData as { [type: string]: Filter })[filterParam];
+      if (!filter) return;
+    } else {
+      filter = filterParam
+    }
+
     if (selectedFilters.includes(filter)) {
       setSelectedFilters((prev) => prev.filter((f) => f !== filter));
       setKeywords((prev) => prev.filter((f) => f !== filter));
+removeQueryParam(filter.name);
     }
     else {
       setSelectedFilters((prev) => Array.from(new Set([...prev, filter])));
       setKeywords((prev) => Array.from(new Set([...prev, filter])));
+addQueryParam(filter.name);
     }
   }
 
