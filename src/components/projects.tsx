@@ -67,7 +67,7 @@ export function Projects() {
   };
 
   const addFilter = (filterParam: Filter | string) => {
-let filter: Filter;
+    let filter: Filter;
     if (typeof filterParam === 'string') {
       filter = (filtersData as { [type: string]: Filter })[filterParam];
       if (!filter) return;
@@ -78,12 +78,12 @@ let filter: Filter;
     if (selectedFilters.includes(filter)) {
       setSelectedFilters((prev) => prev.filter((f) => f !== filter));
       setKeywords((prev) => prev.filter((f) => f !== filter));
-removeQueryParam(filter.name);
+      removeQueryParam(filter.name);
     }
     else {
       setSelectedFilters((prev) => Array.from(new Set([...prev, filter])));
       setKeywords((prev) => Array.from(new Set([...prev, filter])));
-addQueryParam(filter.name);
+      addQueryParam(filter.name);
     }
   }
 
@@ -101,23 +101,21 @@ addQueryParam(filter.name);
   }
 
   return (
-    <div className="flex flex-row">
-        <div className="basis-180 p-4 border-r-1 border-grey">
+    <div className="flex flex-row h-full flex-1 min-h-0">
+        <div className="basis-180 pt-4 px-4 border-r-1 border-grey h-full flex flex-col">
             <h2 className="text-2xl font-bold tracking-tight">Stack</h2>
             <p className="text-muted-foreground mb-2">Choose filters to showcase the enhanced experience</p>
-            <Card className="p-6">
-              <ScrollArea className="h-[calc(100vh-246px)] w-full">
-                {
-                    Object.entries(filtersPerType).map(([type, filters]) => (
-                        <>
-                          {filters && <FilterSection defaultOpen={type === 'Frontend Frameworks'} type={type} filters={filters} onFilterSelected={addFilter} selectedFilters={selectedFilters}></FilterSection>}
-                        </>
-                    ))
-                }
-              </ScrollArea>
-            </Card>
+            <ScrollArea className="w-full h-full">
+              {
+                  Object.entries(filtersPerType).map(([type, filters]) => (
+                      <>
+                        {filters && <FilterSection defaultOpen={type === 'Frontend Frameworks'} type={type} filters={filters} onFilterSelected={addFilter} selectedFilters={selectedFilters}></FilterSection>}
+                      </>
+                  ))
+              }
+            </ScrollArea>
         </div>
-        <div className="basis-auto p-4">
+        <div className="basis-auto pt-4 px-4 flex flex-col min-h-0">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
@@ -133,7 +131,7 @@ addQueryParam(filter.name);
                 </>
                 }
             </Card>
-            <ScrollArea className="h-[calc(100vh-246px)] w-full">
+            <ScrollArea className="w-full flex-1 min-h-0">
               {
                   filteredExperience.map((experience) => (
                       <div className="mb-8" key={experience.company}>
