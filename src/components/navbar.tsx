@@ -27,7 +27,7 @@ export function Navbar() {
                 </Avatar>
                 <div className="ml-2">
                     <div>Andriu Garcia</div>
-                    <div>Frontend Developer Making Life easier to users and developers</div>
+                    <div className="hidden md:block">Frontend Developer Making Life easier to users and developers</div>
                 </div>
                 </a>
             </div>

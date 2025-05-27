@@ -115,15 +115,15 @@ export function Projects() {
               }
             </ScrollArea>
         </div>
-        <div className="basis-auto pt-4 px-4 flex flex-col min-h-0">
-            <div className="flex items-center justify-between">
+        <div className="basis-auto md:basis-full pt-4 px-4 flex flex-col min-h-0">
+            <div className="flex items-center justify-between px-4">
               <div>
                 <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
                 <p className="text-muted-foreground mb-2">Projects I have worked on as a frontend developer</p>
               </div>
               <Button onClick={() => generateResumePDF(filteredExperience)}>Generate Resume <FileDown></FileDown></Button>
             </div>
-            <Card className="flex flex-row py-2 px-4 items-center mb-6">
+            <Card className="flex flex-row py-2 mx-3 px-4 items-center mb-6">
                 {selectedFilters.length === 0 ? <div className="text-stone-400">Choose the filters from the stack in the left panel</div> : <><div className="flex flex-row flex-wrap max-w-full gap-2">
                   { selectedFilters.map((filter) => renderBadge(filter, true)) }
                 </div>
@@ -131,7 +131,7 @@ export function Projects() {
                 </>
                 }
             </Card>
-            <ScrollArea className="w-full flex-1 min-h-0">
+            <ScrollArea className="w-full flex-1 min-h-0 px-4">
               {
                   filteredExperience.map((experience) => (
                       <div className="mb-8" key={experience.company}>
