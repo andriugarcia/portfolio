@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/carousel"
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import { FilterBar } from "./filter-bar";
 
 export function Projects() {
   const [selectedFilters, setSelectedFilters] = useState<Filter[]>([]);
@@ -115,7 +116,7 @@ export function Projects() {
               }
             </ScrollArea>
         </div>
-        <div className="basis-auto md:basis-full pt-4 px-4 flex flex-col min-h-0">
+        <div className="basis-auto md:basis-full pt-4 md:px-4 flex flex-col min-h-0">
             <div className="flex items-center justify-between px-4">
               <div>
                 <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
@@ -123,19 +124,12 @@ export function Projects() {
               </div>
               <Button onClick={() => generateResumePDF(filteredExperience)}>Generate Resume <FileDown></FileDown></Button>
             </div>
-            <Card className="flex flex-row py-2 mx-3 px-4 items-center mb-6">
-                {selectedFilters.length === 0 ? <div className="text-stone-400">Choose the filters from the stack in the left panel</div> : <><div className="flex flex-row flex-wrap max-w-full gap-2">
-                  { selectedFilters.map((filter) => renderBadge(filter, true)) }
-                </div>
-                  <X onClick={clearFilters} className="ml-auto"></X>
-                </>
-                }
-            </Card>
+            <FilterBar selectedFilters={selectedFilters} onFilterClick={addFilter} onClear={clearFilters}/>
             <ScrollArea className="w-full flex-1 min-h-0 px-4">
               {
                   filteredExperience.map((experience) => (
                       <div className="mb-8" key={experience.company}>
-                          <div className="text-2xl">{experience.company}</div>
+                          <div className="text-2xl text-wrap">{experience.company}</div>
                           <div className="text-muted-foreground mb-4">{experience.team}</div>
                           <ul className="list-disc list-inside">
                               {
@@ -151,15 +145,14 @@ export function Projects() {
                           {
                               experience.projects.map((project) => (
                                   <Card className="relative px-4 mb-4" key={project.name}>
-                                      <Button className="absolute top-6 right-4">
-                                        Visit Site
-                                        <ExternalLink></ExternalLink>
-                                      </Button>
-                                      <div className="flex items-center">
+                                      <div className="flex items-center justify-between">
                                         <div className="font-semibold">{ project.name } </div>
-                                        <div className="ml-2 h-2 w-2 rounded-full bg-green-600"></div>
+                                        <Button>
+                                          Visit Site
+                                          <ExternalLink></ExternalLink>
+                                        </Button>
                                       </div>
-                                      <div className="flex gap-2">
+                                      <div className="flex flex-wrap gap-2">
                                           {
                                               project.stack.map((tech) => (
                                                   <Badge variant={selectedFilters.find(filter => filter.name === tech) ? 'default' : 'outline'}>{tech}</Badge>
