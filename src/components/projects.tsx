@@ -103,7 +103,7 @@ export function Projects() {
 
   return (
     <div className="flex flex-row h-full flex-1 min-h-0">
-        <div className="basis-180 pt-4 px-4 border-r-1 border-grey h-full flex flex-col hidden md:block">
+        <div className="basis-[360px] pt-4 px-4 border-r-1 border-grey h-full flex flex-col hidden md:block">
             <h2 className="text-2xl font-bold tracking-tight">Stack</h2>
             <p className="text-muted-foreground mb-2">Choose filters to showcase the enhanced experience</p>
             <ScrollArea className="w-full h-full">
