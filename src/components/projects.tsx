@@ -7,6 +7,7 @@ import { X, ExternalLink, FileDown } from "lucide-react";
 import { FilterSection } from "./filter-section";
 import { ScrollArea } from "@/components/ui/scroll-area"
 import generateResumePDF from "@/resume/resume"
+import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 
 import {
   Carousel,
@@ -159,30 +160,41 @@ export function Projects() {
                                               ))
                                           }
                                       </div>
-                                      <p className="mb-2 text-pretty">{ project.description }</p>
-                                      <ul className="list-disc list-inside">
-                                          {
-                                              project.highlights.map((highlight) => (
-                                                  <li className="text-pretty">{highlight.content} {
-                                                    highlight.matchedKeywords.map((kw) => (
-                                                      <Badge variant="outline" className="text-xs">{kw}</Badge>
-                                                    ))
-                                                  }</li>
-                                              ))
-                                          }
-                                      </ul>
+                                      <div>
+                                        <div className="text-muted-foreground font-bold tracking-wider mb-2">ABOUT THIS PROJECT</div>
+                                        <p className="mb-2 text-pretty">{ project.description }</p>
+                                      </div>
+                                      <div>
+                                        <div className="text-muted-foreground font-bold tracking-wider mb-2">HIGHLIGHTS</div>
+                                        <ul className="list-disc list-inside">
+                                            {
+                                                project.highlights.map((highlight) => (
+                                                    <li className="text-pretty">{highlight.content} {
+                                                      highlight.matchedKeywords.map((kw) => (
+                                                        <Badge variant="outline" className="text-xs">{kw}</Badge>
+                                                      ))
+                                                    }</li>
+                                                ))
+                                            }
+                                        </ul>
+                                      </div>
+                                      <div className="px-12">
                                       <Carousel
                                         opts={{
+                                          loop: false,
                                           align: "start",
                                         }}
+                                        plugins={[
+                                          WheelGesturesPlugin()
+                                        ]}
                                         className="w-full"
                                       >
                                         <CarouselContent>
                                           {Array.from({ length: 5 }).map((_, index) => (
-                                            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                                            <CarouselItem key={index} className="basis-auto">
                                               <div className="p-1">
-                                                <Card className="w-full h-40">
-                                                  <img className="" src="https://placehold.co/600x400" alt="" />
+                                                <Card className="h-60">
+                                                  <img className="h-full" src="https://placehold.co/600x400" alt="" />
                                                 </Card>
                                               </div>
                                             </CarouselItem>
@@ -191,6 +203,7 @@ export function Projects() {
                                         <CarouselPrevious />
                                         <CarouselNext />
                                       </Carousel>
+                                      </div>
                                   </Card>
                               ))
                           }
