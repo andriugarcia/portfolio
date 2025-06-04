@@ -106,7 +106,7 @@ export function Projects() {
     <div className="flex flex-row h-full flex-1 min-h-0">
         <div className="basis-[360px] pt-4 px-4 border-r-1 border-grey h-full flex flex-col hidden md:block">
             <h2 className="text-2xl font-bold tracking-tight">Stack</h2>
-            <p className="text-muted-foreground mb-2">Choose filters to showcase the enhanced experience</p>
+            <p className="text-muted-foreground text-sm mb-2">Choose filters to showcase the enhanced experience</p>
             <ScrollArea className="w-full h-full">
               {
                   Object.entries(filtersPerType).map(([type, filters]) => (
@@ -121,7 +121,7 @@ export function Projects() {
             <div className="flex items-center justify-between px-4">
               <div>
                 <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
-                <p className="text-muted-foreground mb-2">Projects I have worked on as a frontend developer</p>
+                <p className="text-muted-foreground text-sm mb-2">Projects I have worked on as a frontend developer</p>
               </div>
               <Button onClick={() => generateResumePDF(filteredExperience)}>Generate Resume <FileDown></FileDown></Button>
             </div>
@@ -162,14 +162,14 @@ export function Projects() {
                                       </div>
                                       <div>
                                         <div className="text-muted-foreground font-bold tracking-wider mb-2">ABOUT THIS PROJECT</div>
-                                        <p className="mb-2 text-pretty">{ project.description }</p>
+                                        <p className="mb-2 text-pretty text-green-50">{ project.description }</p>
                                       </div>
                                       <div>
-                                        <div className="text-muted-foreground font-bold tracking-wider mb-2">HIGHLIGHTS</div>
+                                        <div className="text-muted-foreground font-bold tracking-wider text-purple-50 mb-2">HIGHLIGHTS</div>
                                         <ul className="list-disc list-inside">
                                             {
                                                 project.highlights.map((highlight) => (
-                                                    <li className="text-pretty">{highlight.content} {
+                                                    <li className="text-pretty text-purple-50">{highlight.content} {
                                                       highlight.matchedKeywords.map((kw) => (
                                                         <Badge variant="outline" className="text-xs">{kw}</Badge>
                                                       ))
@@ -192,9 +192,9 @@ export function Projects() {
                                         <CarouselContent>
                                           {Array.from({ length: 5 }).map((_, index) => (
                                             <CarouselItem key={index} className="basis-auto">
-                                              <div className="p-1">
-                                                <Card className="h-60">
-                                                  <img className="h-full" src="https://placehold.co/600x400" alt="" />
+                                              <div className="">
+                                                <Card className="h-60 py-0">
+                                                  <img className="h-full rounded-xl" src="https://placehold.co/600x400" alt="" />
                                                 </Card>
                                               </div>
                                             </CarouselItem>
