@@ -123,7 +123,7 @@ export function Projects() {
                 <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
                 <p className="text-muted-foreground text-sm mb-2">Projects I have worked on as a frontend developer</p>
               </div>
-              <Button onClick={() => generateResumePDF(filteredExperience)}>Generate Resume <FileDown></FileDown></Button>
+              <Button onClick={() => generateResumePDF(filteredExperience)}><div className="hidden md:block">Generate Resume </div><FileDown></FileDown></Button>
             </div>
             <FilterBar selectedFilters={selectedFilters} onFilterClick={addFilter} onClear={clearFilters}/>
             <ScrollArea className="w-full flex-1 min-h-0 px-4">
@@ -149,7 +149,7 @@ export function Projects() {
                                       <div className="flex items-center justify-between">
                                         <div className="font-semibold">{ project.name } </div>
                                         <Button>
-                                          Visit Site
+                                          <div className="hidden md:block">Visit Site</div>
                                           <ExternalLink></ExternalLink>
                                         </Button>
                                       </div>
@@ -161,11 +161,11 @@ export function Projects() {
                                           }
                                       </div>
                                       <div>
-                                        <div className="text-muted-foreground font-bold tracking-wider mb-2">ABOUT THIS PROJECT</div>
+                                        <div className="text-muted-foreground font-bold tracking-wider text-green-50/70 mb-2">ABOUT THIS PROJECT</div>
                                         <p className="mb-2 text-pretty text-green-50">{ project.description }</p>
                                       </div>
                                       <div>
-                                        <div className="text-muted-foreground font-bold tracking-wider text-purple-50 mb-2">HIGHLIGHTS</div>
+                                        <div className="text-muted-foreground font-bold tracking-wider text-purple-50/70 mb-2">HIGHLIGHTS</div>
                                         <ul className="list-disc list-inside">
                                             {
                                                 project.highlights.map((highlight) => (
@@ -187,14 +187,14 @@ export function Projects() {
                                         plugins={[
                                           WheelGesturesPlugin()
                                         ]}
-                                        className="w-full"
+                                        className="hidden md:block w-full"
                                       >
                                         <CarouselContent>
                                           {Array.from({ length: 5 }).map((_, index) => (
                                             <CarouselItem key={index} className="basis-auto">
                                               <div className="">
                                                 <Card className="h-60 py-0">
-                                                  <img className="h-full rounded-xl" src="https://placehold.co/600x400" alt="" />
+                                                  <img className="h-full w-full md:w-auto rounded-xl" src="https://placehold.co/600x400" alt="" />
                                                 </Card>
                                               </div>
                                             </CarouselItem>
@@ -203,6 +203,22 @@ export function Projects() {
                                         <CarouselPrevious />
                                         <CarouselNext />
                                       </Carousel>
+                                      </div>
+                                      <div className="md:hidden grid grid-cols-2 gap-2">
+                                        <div className="grid gap-2">
+                                          {Array.from({ length: 2 }).map((_, index) => (
+                                            <Card className="py-0">
+                                              <img className="rounded-xl" src="https://placehold.co/600x400" alt="" />
+                                            </Card>
+                                          ))}
+                                        </div>
+                                        <div className="grid gap-4">
+                                          {Array.from({ length: 2 }).map((_, index) => (
+                                            <Card className="py-0">
+                                              <img className="rounded-xl" src="https://placehold.co/600x400" alt="" />
+                                            </Card>
+                                          ))}
+                                        </div>
                                       </div>
                                   </Card>
                               ))

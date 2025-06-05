@@ -58,7 +58,7 @@ export function Navbar() {
                 <a href={about.links.email} target="_blank" rel="noopener noreferrer">
                     <Button className="ml-2 cursor-pointer">
                         <Mail className="h-4 w-4" />
-                        <div>Get In Touch</div>
+                        <div className="hidden md:block">Get In Touch</div>
                     </Button>
                 </a>
                 {/* <ModeToggle></ModeToggle> */}

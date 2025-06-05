@@ -19,11 +19,11 @@ export function FilterBar({selectedFilters, onFilterClick, onClear}: FilterBarPr
         
         return (<Badge color={filter.color} onClick={() => onFilterClick(filter)}>{filter.name} {dismissible ? <X></X> : null}</Badge>)
     }
-    return <Card className="flex flex-row py-2 mx-3 px-4 items-center mb-6">
+    return <Card className="flex flex-row justify-between py-2 mx-3 px-4 items-center mb-6">
         <>
             {selectedFilters.length === 0 ? 
             <>
-                <div className="text-stone-400 hidden md:block">Choose the filters from the stack in the left panel</div> 
+                <div className="text-stone-400">Choose the filters from stack</div> 
             </>
             : <><div className="flex flex-row flex-wrap max-w-full gap-2">
             { selectedFilters.map((filter) => renderBadge(filter, true)) }
@@ -31,10 +31,7 @@ export function FilterBar({selectedFilters, onFilterClick, onClear}: FilterBarPr
             <X onClick={onClear} className="ml-auto"></X>
             </>
             }
-            <Button className="md:hidden place-self-end w-full  ">
-                {
-                    selectedFilters.length === 0 && <div>Add Filter</div>
-                }
+            <Button className="md:hidden place-self-end">
                 <ListFilterPlus/>
             </Button>
         </>
