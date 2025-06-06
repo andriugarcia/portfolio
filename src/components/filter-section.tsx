@@ -13,6 +13,8 @@ import { useState } from "react";
 type FilterSectionProps = {
   type: string;
   filters: Filter[];
+  defaultOpen: boolean;
+  selectedFilters: (Filter | string)[];
   onFilterSelected: (filter: Filter) => void;
 }
 

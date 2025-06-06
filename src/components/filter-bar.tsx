@@ -1,4 +1,5 @@
-import { ListFilterPlus, X } from "lucide-react";
+import { useState } from "react";
+import { Check, ListFilterPlus, X } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Card } from "./ui/card";
 import type { Filter } from "@/types/filter";
@@ -11,7 +12,8 @@ type FilterBarProps = {
     onClear: () => void;
 }
 
-export function FilterBar({selectedFilters, onFilterClick, onClear}: FilterBarProps) {
+export function FilterBar({selectedFilters, onFilterClick, onClear, onFilterMobileOpened}: FilterBarProps) {
+    const [filterMobileOpened, setFilterMobileOpened] = useState(false);
     const renderBadge = (filter: Filter | string, dismissible: boolean = false) => {
         if (typeof filter === 'string') {
             filter = (filtersData as Record<string, Filter>)[filter] ?? { name: filter, type: "others", color: "gray" };
@@ -19,6 +21,12 @@ export function FilterBar({selectedFilters, onFilterClick, onClear}: FilterBarPr
         
         return (<Badge color={filter.color} onClick={() => onFilterClick(filter)}>{filter.name} {dismissible ? <X></X> : null}</Badge>)
     }
+
+    const toggleFilterMobile = () => {
+        setFilterMobileOpened(prev => !prev);
+        onFilterMobileOpened();
+    }
+
     return <Card className="flex flex-row justify-between py-2 mx-3 px-4 items-center mb-6">
         <>
             {selectedFilters.length === 0 ? 
@@ -31,8 +39,8 @@ export function FilterBar({selectedFilters, onFilterClick, onClear}: FilterBarPr
             <X onClick={onClear} className="ml-auto"></X>
             </>
             }
-            <Button className="md:hidden place-self-end">
-                <ListFilterPlus/>
+            <Button className="md:hidden place-self-end" onClick={toggleFilterMobile}>
+                { !filterMobileOpened ? <ListFilterPlus/> : <Check/>}
             </Button>
         </>
     </Card>
