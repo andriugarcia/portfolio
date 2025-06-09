@@ -54,6 +54,10 @@ function Badge({
   VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
   const Comp = asChild ? Slot : "button"
 
+  if (props.onClick) {
+    className += " hover:brightness-130"
+  }
+
   return (
     <Comp
       data-slot="badge"
