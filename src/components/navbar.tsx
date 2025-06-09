@@ -21,6 +21,7 @@ type AboutData = {
     name: string;
     description: string;
     avatar: string;
+    profilePicture: string;
     links: {
         github: string;
         linkedin: string;
@@ -35,7 +36,7 @@ export function Navbar() {
             <div className="flex items-center">
                 <a href="/" className="flex items-center">
                 <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarImage src={about.profilePicture} />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <div className="ml-2">

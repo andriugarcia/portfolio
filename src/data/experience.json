@@ -133,7 +133,7 @@
                 "stack": ["React", "Vite", "LLM", "Voice Recognition", "Design System"]
             },
             {
-                "name": "Zanbeek", 
+                "name": "Marketing Agency", 
                 "description": "", 
                 "baseScore": 0,
                 "highlights": [
@@ -142,7 +142,49 @@
                 "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"] 
             },
             {
-                "name": "Layers", 
+                "name": "Real Estate", 
+                "description": "",
+                "baseScore": 0,
+                "highlights": [
+                    { "keywords": [], "baseScore": 0, "content": ""}
+                ], 
+                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
+            }
+        ]
+    },
+    {
+        "company": "Side Hustles",
+        "role": "",
+        "team": "",
+        "baseScore": 0,
+        "startDate": "",
+        "endDate": "",
+        "location": "",
+        "highlights": [
+            { "content": "Collaborated in peer programming with junior developers, conducted technical interviews, and performed code reviews to ensure quality and maintain coding standards", "keywords": ["Peer Programming"], "baseScore": 0 }
+        ],
+        "projects": [
+{
+                "name": "Olimaps", 
+                "description": "",
+                "baseScore": 100,
+                "images": ["/olimaps/arch.jpeg", "/olimaps/physical-design.jpeg", "/olimaps/db.jpeg"],
+                "highlights": [
+                    { "keywords": [], "baseScore": 0, "content": ""}
+                ], 
+                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
+            },
+            {
+                "name": "Pantala", 
+                "description": "",
+                "baseScore": 0,
+                "highlights": [
+                    { "keywords": [], "baseScore": 0, "content": ""}
+                ], 
+                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
+            },
+            {
+                "name": "Learning Platform", 
                 "description": "",
                 "baseScore": 0,
                 "highlights": [

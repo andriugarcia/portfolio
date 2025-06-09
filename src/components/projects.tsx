@@ -156,47 +156,55 @@ export function Projects() {
                           </ul>
                         </div>
                         <div className="px-12">
-                        <Carousel
-                          opts={{
-                            loop: false,
-                            align: "start",
-                          }}
-                          plugins={[
-                            WheelGesturesPlugin()
-                          ]}
-                          className="hidden md:block w-full"
-                        >
-                          <CarouselContent>
-                            {Array.from({ length: 5 }).map((_, index) => (
-                              <CarouselItem key={index} className="basis-auto">
-                                <div className="">
-                                  <Card className="h-60 py-0">
-                                    <img className="h-full w-full md:w-auto rounded-xl" src="https://placehold.co/600x400" alt="" />
-                                  </Card>
-                                </div>
-                              </CarouselItem>
-                            ))}
-                          </CarouselContent>
-                          <CarouselPrevious />
-                          <CarouselNext />
-                        </Carousel>
+                        {
+                          project.images &&
+                          <Carousel
+                            opts={{
+                              loop: false,
+                              align: "start",
+                            }}
+                            plugins={[
+                              WheelGesturesPlugin()
+                            ]}
+                            className="hidden md:block w-full"
+                          >
+                            <CarouselContent>
+                              {project.images.map((src, index) => (
+                                <CarouselItem key={index} className="basis-auto">
+                                  <div className="">
+                                    <Card className="h-60 py-0">
+                                      <img className="h-full w-full md:w-auto rounded-xl" src={src} alt="" />
+                                    </Card>
+                                  </div>
+                                </CarouselItem>
+                              ))}
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                          </Carousel>
+                        }
                         </div>
-                        <div className="md:hidden grid grid-cols-2 gap-2">
-                          <div className="grid gap-2">
-                            {Array.from({ length: 2 }).map((_, index) => (
-                              <Card className="py-0">
-                                <img className="rounded-xl" src="https://placehold.co/600x400" alt="" />
-                              </Card>
-                            ))}
+                        {
+                          project.images &&
+                          <div className="md:hidden grid grid-cols-2 gap-2">
+                            <div className="grid gap-2">
+                              {project.images.map((src, index) => (
+                                index % 2 === 0 ? (
+                                <Card className="py-0">
+                                  <img className="rounded-xl" src={src} alt="" />
+                                </Card>) : null
+                              ))}
+                            </div>
+                            <div className="grid gap-2">
+                              {project.images.map((src, index) => (
+                                index % 2 !== 0 ? (
+                                  <Card className="py-0">
+                                    <img className="rounded-xl" src={src} alt="" />
+                                  </Card>) : null
+                              ))}
+                            </div>
                           </div>
-                          <div className="grid gap-4">
-                            {Array.from({ length: 2 }).map((_, index) => (
-                              <Card className="py-0">
-                                <img className="rounded-xl" src="https://placehold.co/600x400" alt="" />
-                              </Card>
-                            ))}
-                          </div>
-                        </div>
+                        }
                     </Card>
                 ))
             }
