@@ -1,16 +1,4 @@
-import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuIndicator,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-    NavigationMenuViewport,
-    navigationMenuTriggerStyle,
-  } from "@/components/ui/navigation-menu";
-
-import { ModeToggle } from "./mode-toggle";
+import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 
 import { Mail, Linkedin, Github } from "lucide-react"
@@ -32,7 +20,7 @@ type AboutData = {
 export function Navbar() {
     const about: AboutData = aboutData;
     return (
-    <div className="flex items-center justify-between w-full px-4 py-2 border-b-1 border-grey-400">
+    <Card className="flex flex-row items-center justify-between w-full px-4 py-2 mb-2 border-b-1 border-grey-400">
             <div className="flex items-center">
                 <a href="/" className="flex items-center">
                 <Avatar>
@@ -64,6 +52,6 @@ export function Navbar() {
                 </a>
                 {/* <ModeToggle></ModeToggle> */}
             </div>
-    </div>
+    </Card>
                 );
 }

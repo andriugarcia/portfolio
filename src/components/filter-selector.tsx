@@ -15,7 +15,7 @@ export function FilterSelector({selectedFilters, addFilter}) {
             {
                 Object.entries(filtersPerType).map(([type, filters]) => (
                     <>
-                    {filters && <FilterSection defaultOpen={type === 'Frontend Frameworks'} type={type} filters={filters} onFilterSelected={addFilter} selectedFilters={selectedFilters}></FilterSection>}
+                        {filters && <FilterSection key={type} defaultOpen={type === 'Frontend Frameworks'} type={type} filters={filters} onFilterSelected={addFilter} selectedFilters={selectedFilters}></FilterSection>}
                     </>
                 ))
             }

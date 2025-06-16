@@ -197,7 +197,7 @@
     {
         "company": "Side Hustles",
         "role": "",
-        "team": "",
+        "team": "Projects I have worked on independently",
         "baseScore": 0,
         "startDate": "",
         "endDate": "",
@@ -206,7 +206,7 @@
             { "content": "Collaborated in peer programming with junior developers, conducted technical interviews, and performed code reviews to ensure quality and maintain coding standards", "keywords": ["Peer Programming"], "baseScore": 0 }
         ],
         "projects": [
-{
+        {
                 "name": "Olimaps", 
                 "description": "Conceptualized, designed, and developed the full range of features for a social network, including architecture, mobile-first UI, database, frontend, and backend development",
                 "baseScore": 0,
