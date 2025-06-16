@@ -7,19 +7,20 @@ import filtersData from "@/data/filters.json"
 import { Button } from "./ui/button";
 
 type FilterBarProps = {
+    className?: string;
     selectedFilters: (Filter | string)[];
     onFilterClick: (filter: Filter) => void;
     onClear: () => void;
 }
 
-export function FilterBar({selectedFilters, onFilterClick, onClear, onFilterMobileOpened}: FilterBarProps) {
+export function FilterBar({className, selectedFilters, onFilterClick, onClear, onFilterMobileOpened}: FilterBarProps) {
     const [filterMobileOpened, setFilterMobileOpened] = useState(false);
     const renderBadge = (filter: Filter | string, dismissible: boolean = false) => {
         if (typeof filter === 'string') {
             filter = (filtersData as Record<string, Filter>)[filter] ?? { name: filter, type: "others", color: "gray" };
         }
         
-        return (<Badge color={filter.color} onClick={() => onFilterClick(filter)}>{filter.name} {dismissible ? <X></X> : null}</Badge>)
+        return (<Badge key={filter.name} color={filter.color} onClick={() => onFilterClick(filter)}>{filter.name} {dismissible ? <X></X> : null}</Badge>)
     }
 
     const toggleFilterMobile = () => {
@@ -27,7 +28,7 @@ export function FilterBar({selectedFilters, onFilterClick, onClear, onFilterMobi
         onFilterMobileOpened();
     }
 
-    return <Card className="flex flex-row justify-between py-2 mx-3 px-4 items-center mb-6">
+    return <Card className={"flex flex-row justify-between py-2 mx-3 px-4 items-center " + className}>
         <>
             {selectedFilters.length === 0 ? 
             <>
