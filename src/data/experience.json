@@ -155,7 +155,7 @@
     {
         "company": "Side Hustles",
         "role": "",
-        "team": "",
+        "team": "Projects I have worked on independently",
         "baseScore": 0,
         "startDate": "",
         "endDate": "",
@@ -164,7 +164,7 @@
             { "content": "Collaborated in peer programming with junior developers, conducted technical interviews, and performed code reviews to ensure quality and maintain coding standards", "keywords": ["Peer Programming"], "baseScore": 0 }
         ],
         "projects": [
-{
+        {
                 "name": "Olimaps", 
                 "description": "",
                 "baseScore": 100,
