@@ -13,10 +13,11 @@
         "projects": [
             { 
                 "name": "Dashboard Components Library", 
-                "description": "A Vue library with components using our internal design library to help developers across teams avoid reimplementing the same components for their dashboards.",
+                "description": "A component that utilizes our internal design library to help developers across teams avoid reimplementing the same components for dashboards.",
                 "baseScore": 10,
                 "highlights": [
-                    { "content": "Created documentation to help developers contribute to or use the library, leveraging PRs to facilitate code reviews.", "keywords": ["Documentation", "Code Reviews"], "baseScore": 10 },
+                    { "content": "Contributor and project owner, conducting code reviews to accept contributions from other developers.", "keywords": ["Ownership", "Code Reviews"], "baseScore": 10 },
+                    { "content": "Created documentation to help developers contribute to or use the library.", "keywords": ["Documentation", "Code Reviews"], "baseScore": 0 },
                     { "content": "Added unit tests and E2E tests using Vue Test Utils and Storybook, enabling developers to reuse components without needing to add additional tests.", "keywords": ["Unit Tests", "E2E Tests", "Vue Test Utils", "Storybook"], "baseScore": 0 },
                     { "content": "Implemented a CI/CD pipeline to deploy the library upon merging, with the ability to create snapshots for QA.", "keywords": ["CI/CD", "QA", "Snapshots"], "baseScore": 0 }
                 ],
@@ -56,14 +57,19 @@
                 "baseScore": 10,
                 "highlights": [
                     { 
+                        "keywords": [], 
+                        "baseScore": 10, 
+                        "content": "Interviewed, onboarded, and mentored an agile team of 8 developers" 
+                    },
+                    { 
                         "keywords": ["Micro Frontends", "Architecture", "Communication"], 
                         "baseScore": 10, 
-                        "content": "Designed an architecture for micro frontends across the teams to define how micro frontends should communicate with each other." 
+                        "content": "Designed an architecture for micro frontends, to determine how they should communicate with each other." 
                     },
                     { 
                         "keywords": ["Unit Tests", "Mockito", "Vue Test Utils"], 
                         "baseScore": 0, 
-                        "content": "Added unit tests on the backend using Mockito and on the frontend using Vue Test Utils to ensure code quality and reliability." 
+                        "content": "Added unit tests on the backend with Mockito and on the frontend using Vue Test Utils to ensure code quality and reliability." 
                     },
                     { 
                         "keywords": ["Microservices", "Backend Development"], 
@@ -81,7 +87,7 @@
                     { 
                         "keywords": ["No Code", "Platform Design"], 
                         "baseScore": 0, 
-                        "content": "Designed and developed a second version of the platform to improve the experience of development." 
+                        "content": "Taken the initiative to redesign and implement the no-code template editor, significantly improving the productivity of internal employees." 
                     },
                     { 
                         "keywords": ["No Code", "Migration", "Security", "Cost Reduction"], 
@@ -124,7 +130,7 @@
                         "keywords": ["Extensible Infrastructure", "Chatbot"], 
                         "baseScore": 0 
                     },
-                    { 
+                    {
                         "content": "Created a design system for the chatbot which allows performing different animations and transitions during the conversation flow.", 
                         "keywords": ["Design System", "Animations", "Transitions"], 
                         "baseScore": 0 
@@ -133,13 +139,23 @@
                 "stack": ["React", "Vite", "LLM", "Voice Recognition", "Design System"]
             },
             {
-                "name": "Marketing Agency", 
+                "name": "AI Manuscript Analyzer", 
+                "description": "Developed a platform that uses AI-driven manuscript analysis to help authors and editors enhance their stories and fully realize their potential.", 
+                "baseScore": 0,
+                "highlights": [
+                    {"content": "Created a collection of graphics at home using SVG animations with the ability to react based on data and user decisions", "keywords": ["SVG", "Animations", "Components"], "baseScore": 0}
+                ],
+                "stack": ["Next.js", "Pytorch", "Firebase", "Stripe"] 
+            },
+            {
+                "name": "Landing Page for Marketing Agency", 
                 "description": "", 
                 "baseScore": 0,
                 "highlights": [
                     {"content": "", "keywords": [""], "baseScore": 0}
                 ],
-                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"] 
+                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"],
+                "images": ["/zandbeek/intro.gif", "/zandbeek/showcase-desktop.gif", "/zandbeek/showcase-mobile.gif"]
             },
             {
                 "name": "Real Estate", 
@@ -148,7 +164,33 @@
                 "highlights": [
                     { "keywords": [], "baseScore": 0, "content": ""}
                 ], 
-                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
+                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"],
+                "images": ["/layers/layers.gif", "/layers/showcase.jpeg", "/layers/showcase-mobile.jpeg"]
+            }
+        ]
+    },
+    {
+        "company": "Vodafone",
+        "role": "",
+        "team": "",
+        "baseScore": 0,
+        "startDate": "",
+        "endDate": "",
+        "location": "",
+        "highlights": [
+            { "content": "Participating in the Vodafone Campus Lab program was an experience that allowed me to utilize cutting-edge technologies such as blockchain, IoT, and 5G to solve real-world problems related to the UN's Sustainable Development Goals", "keywords": [""], "baseScore": 10 }
+        ],
+        "projects": [
+            {
+                "name": "", 
+                "description": "",
+                "baseScore": 0,
+                "images": [],
+                "highlights": [
+                    { "content": "Drafted a business model providing as a solution to create a direct connection between farmers and wholesale of agricultural products with blockchain", "keywords": [""], "baseScore": 0 },
+                    { "content": "Prototyped a functional web app in just one week to demonstrate the capabilities of our solution", "keywords": [""], "baseScore": 0 }
+                ], 
+                "stack": ["Vue.js", "Firebase", "Data Visualization"]
             }
         ]
     },
@@ -166,11 +208,15 @@
         "projects": [
 {
                 "name": "Olimaps", 
-                "description": "",
-                "baseScore": 100,
+                "description": "Conceptualized, designed, and developed the full range of features for a social network, including architecture, mobile-first UI, database, frontend, and backend development",
+                "baseScore": 0,
                 "images": ["/olimaps/arch.jpeg", "/olimaps/physical-design.jpeg", "/olimaps/db.jpeg"],
                 "highlights": [
-                    { "keywords": [], "baseScore": 0, "content": ""}
+                    { "keywords": [], "baseScore": 0, "content": "Optimized user experience through UI design using Figma, such as allowing users to access the application without registration, enabling one-step registration, placing frequently used actions near the thumb area, or utilizing levels of detail in posts"},
+                    { "keywords": [], "baseScore": 0, "content": "Architected frontend utilizing Vuex state management pattern to deliver a robust real-time information system centralising data sources such as REST, sockets, in-app notifications, and PUSH notifications"},
+                    { "keywords": [], "baseScore": 0, "content": "Leveraged advanced Browser API services, including AbortController, Audio API, Cache, Web workers, Geolocation API, Service workers, Vibration, and WebRTC, to deliver seamless and innovative user experiences"},
+                    { "keywords": [], "baseScore": 0, "content": "Created documentation to facilitate the understanding of a project of this magnitude. Including planning, architecture, functional requirements, implementation memory, deployment and CI/CD, monitoring and subsequent decisions for scalability"},
+                    { "keywords": [], "baseScore": 0, "content": "Implemented design system methodology to increase efficiency and consistency across all projects, leveraging Storybook library to centralize component management and implementing visual automated testing to ensure consistent quality with every update"}
                 ], 
                 "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
             },
@@ -179,18 +225,42 @@
                 "description": "",
                 "baseScore": 0,
                 "highlights": [
-                    { "keywords": [], "baseScore": 0, "content": ""}
+                    { "keywords": [], "baseScore": 0, "content": "Collaborated closely with stakeholders, including partners and clients, to understand their business requirements and translate them into actionable tasks for the development team"},
+                    { "keywords": [], "baseScore": 0, "content": "Successfully drove conversion rate to 10% and reached a user base of 20,000 securing a 200K funding round, reducing landing page friction using data-driven approach with A/B testing and conversion funnel analysis, utilizing tools such as Google Analytics, HubSpot, and Facebook Pixel"},
+                    { "keywords": [], "baseScore": 0, "content": "Architected and selected frontend stack (\textbf{Vue.js} (Nuxt and Vuex)) for landing page, customer order dashboard, and logistics dashboard. Ensured centralized data and maintained consistency across projects"},
+                    { "keywords": [], "baseScore": 0, "content": "Maximized frontend performance using techniques such as SSR, lazy-loading, caching, dynamic imports, preloading, minifying, and using webp images, reducing largest contenful paint from 5s to 0.60s"},
+                    { "keywords": [], "baseScore": 0, "content": "Implemented end-to-end and unit testing using Cypress and Jest to verify the correct behavior of the app across browsers in addition to ensure the accuracy and reliability of individual components"},
+                    { "keywords": [], "baseScore": 0, "content": "Executed technical SEO strategies, including SSR, Open Graph, semantic HTML, and structured data, getting 100 score on lighthouse"}                    
                 ], 
                 "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
             },
             {
-                "name": "Learning Platform", 
-                "description": "",
+                "name": "Knowledge Share Platform", 
+                "description": "Platform that allows content creators to easily create interactive articles and publish them into channels, making it easier for them to reach the right audience",
                 "baseScore": 0,
                 "highlights": [
                     { "keywords": [], "baseScore": 0, "content": ""}
                 ], 
-                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
+                "stack": ["Nuxt.js", "Express", "Rollup", "Firebase", "Cloud Functions", "PostgresQL", "ElasticSearch", "GraphQL"]
+            },
+            {
+                "name": "Clothing Recommender", 
+                "description": "Tinder like app where users vote if they like a garment more or less, as they vote the recommendation algorithm learns from their tastes and starts to recommend better and better garments that the user might like",
+                "baseScore": 0,
+                "highlights": [
+                    { "keywords": [""], "baseScore": 0, "content": "Significantly improved user engagement by leveraging graph databases to recommend clothes based on users with similar tastes"},
+                    { "keywords": [""], "baseScore": 0, "content": "Utilizing kNN within the garment query without the need to generate a model resulted in an algorithm that continually provides better and more personalized results to users"}
+                ], 
+                "stack": []
+            },
+            {
+                "name": "AI Product Wizard", 
+                "description": "",
+                "baseScore": 0,
+                "highlights": [
+                    { "keywords": [""], "baseScore": 0, "content": "Significantly improved user engagement by leveraging graph databases to recommend clothes based on users with similar tastes"}
+                ], 
+                "stack": ["Nuxt.js", "Express", "Rollup", "Firebase", "Cloud Functions", "PostgresQL", "ElasticSearch", "GraphQL"]
             }
         ]
     }

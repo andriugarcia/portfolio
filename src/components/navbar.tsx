@@ -37,7 +37,7 @@ export function Navbar() {
                 <a href="/" className="flex items-center">
                 <Avatar>
                     <AvatarImage src={about.profilePicture} />
-                    <AvatarFallback>CN</AvatarFallback>
+                    <AvatarFallback>AG</AvatarFallback>
                 </Avatar>
                 <div className="ml-2">
                     <div className="text-sm" style={{fontFamily: "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace"}}>{about.name}</div>
