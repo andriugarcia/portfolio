@@ -123,14 +123,14 @@ export function Projects() {
                         </div>
                         <div>
                           <div className="text-muted-foreground font-bold tracking-wider text-green-50/70 mb-2">ABOUT THIS PROJECT</div>
-                          <p className="mb-2 text-pretty text-green-50">{ project.description }</p>
+                          <p className="mb-2 text-pretty max-w-prose text-green-50">{ project.description }</p>
                         </div>
                         <div>
                           <div className="text-muted-foreground font-bold tracking-wider text-purple-50/70 mb-2">HIGHLIGHTS</div>
                           <ul className="list-disc list-inside">
                               {
                                   project.highlights.map((highlight) => (
-                                      <li key={highlight.content} className="text-pretty text-purple-50">{highlight.content} {
+                                      <li className="text-pretty max-w-prose text-purple-50">{highlight.content} {
                                         highlight.matchedKeywords.map((kw) => (
                                           <Badge key={kw} variant="outline" className="text-xs">{kw}</Badge>
                                         ))
