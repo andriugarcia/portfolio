@@ -2,7 +2,7 @@
     {
         "company": "Vonage",
         "role": "Senior Frontend Engineer",
-        "team": "Customer Dashboard - Frontend Tooling Squad",
+        "team": "Customer Dashboard",
         "baseScore": 20,
         "startDate": "Aug 2022",
         "endDate": "present",
@@ -52,14 +52,14 @@
                 "stack": ["Vue.js", "Micro Frontends", "CI/CD", "AWS"]
             },
             {
-                "name": "Partner Portal", 
-                "description": "Worked on a micro frontend infrastructure for a multi-tenant dashboard for company partners.", 
-                "baseScore": 10,
+                "name": "Partner Management Portal", 
+                "description": "A platform for partners to manage their accounts, view analytics, and access resources. Developed as a micro-frontend to allow independent development and deployment across teams.", 
+                "baseScore": 0,
                 "highlights": [
                     { 
-                        "keywords": [], 
-                        "baseScore": 10, 
-                        "content": "Interviewed, onboarded, and mentored an agile team of 8 developers" 
+                        "keywords": [],
+                        "baseScore": 10,
+                        "content": "Be part of the team during a time of transition, taking a significant part in interviewing, onboarding, and mentoring new developers." 
                     },
                     { 
                         "keywords": ["Micro Frontends"], 
@@ -72,7 +72,7 @@
                         "content": "Added unit tests on the backend with Mockito and on the frontend using Vue Test Utils to ensure code quality and reliability." 
                     },
                     { 
-                        "keywords": ["Microservices"], 
+                        "keywords": ["Backend", "Microservices"], 
                         "baseScore": 0, 
                         "content": "Developed the backend based on a microservices architecture to support the multi-tenant dashboard." 
                     }
@@ -81,13 +81,13 @@
             },
             {
                 "name": "No Code Platform", 
-                "description": "Developed on an internal no-code platform which allows teams to create frontends to interact with different APIs across the company.", 
+                "description": "An internal no-code platform that empowers teams to effortlessly design user interfaces for seamless interaction with various APIs across the organization.",
                 "baseScore": 0,
                 "highlights": [
-                    { 
-                        "keywords": ["No Code"], 
+                    {
+                        "keywords": ["No Code", "Improved UX"], 
                         "baseScore": 0, 
-                        "content": "Taken the initiative to redesign and implement the no-code template editor, significantly improving the productivity of internal employees." 
+                        "content": "Redesigned and implemented the no-code template editor, significantly improving the productivity of internal employees." 
                     },
                     { 
                         "keywords": ["No Code", "Security", "Cost Reduction"], 
@@ -105,9 +105,9 @@
         ]
     },
     {
-        "company": "Freelance",
-        "role": "Full Stack Developer",
-        "team": "",
+        "company": "Studio Vi",
+        "role": "Frontend Developer",
+        "team": "Freelance Development Studio",
         "startDate": "Aug 2022",
         "endDate": "Sep 2023",
         "baseScore": 10,
@@ -169,31 +169,6 @@
         ]
     },
     {
-        "company": "Vodafone",
-        "role": "",
-        "team": "",
-        "baseScore": 0,
-        "startDate": "",
-        "endDate": "",
-        "location": "",
-        "highlights": [
-            { "content": "Participating in the Vodafone Campus Lab program was an experience that allowed me to utilize cutting-edge technologies such as blockchain, IoT, and 5G to solve real-world problems related to the UN's Sustainable Development Goals", "keywords": [""], "baseScore": 10 }
-        ],
-        "projects": [
-            {
-                "name": "", 
-                "description": "",
-                "baseScore": 0,
-                "images": [],
-                "highlights": [
-                    { "content": "Drafted a business model providing as a solution to create a direct connection between farmers and wholesale of agricultural products with blockchain", "keywords": [""], "baseScore": 0 },
-                    { "content": "Prototyped a functional web app in just one week to demonstrate the capabilities of our solution", "keywords": [""], "baseScore": 0 }
-                ], 
-                "stack": ["Vue.js", "Firebase", "Data Visualization"]
-            }
-        ]
-    },
-    {
         "company": "Side Hustles",
         "role": "",
         "team": "Projects I have worked on independently",
@@ -207,15 +182,15 @@
         "projects": [
         {
                 "name": "Olimaps", 
-                "description": "Conceptualized, designed, and developed the full range of features for a social network, including architecture, mobile-first UI, database, frontend, and backend development",
+                "description": "A virtual interaction platform developed during the COVID pandemic, enabling users to connect and engage with their local community. Conceptualized the design, architecture, and implementation to enhance user experience and foster meaningful connections.",
                 "github": "https://github.com/andriugarcia/Olimaps-Frontend",
                 "baseScore": 0,
                 "images": ["/olimaps/arch.jpeg", "/olimaps/physical-design.jpeg", "/olimaps/db.jpeg"],
                 "highlights": [
-                    { "keywords": [], "baseScore": 0, "content": "Optimized user experience through UI design using Figma, such as allowing users to access the application without registration, enabling one-step registration, placing frequently used actions near the thumb area, or utilizing levels of detail in posts"},
-                    { "keywords": [], "baseScore": 0, "content": "Architected frontend utilizing Vuex state management pattern to deliver a robust real-time information system centralising data sources such as REST, sockets, in-app notifications, and PUSH notifications"},
-                    { "keywords": [], "baseScore": 0, "content": "Leveraged advanced Browser API services, including AbortController, Audio API, Cache, Web workers, Geolocation API, Service workers, Vibration, and WebRTC, to deliver seamless and innovative user experiences"},
-                    { "keywords": [], "baseScore": 0, "content": "Created documentation to facilitate the understanding of a project of this magnitude. Including planning, architecture, functional requirements, implementation memory, deployment and CI/CD, monitoring and subsequent decisions for scalability"},
+                    { "keywords": ["Improved UX"], "baseScore": 0, "content": "Optimized user experience through UI design using Figma, such as allowing users to access the application without registration, enabling one-step registration, placing frequently used actions near the thumb area, or utilizing levels of detail in posts"},
+                    { "keywords": ["State Management"], "baseScore": 0, "content": "Architected frontend using Vuex to deliver a robust real-time information system centralising data sources such as REST, sockets, in-app notifications, and PUSH notifications"},
+                    { "keywords": ["Improved UX", "Browser API"], "baseScore": 0, "content": "Leveraged advanced Browser API services, including AbortController, Audio API, Cache, Web workers, Geolocation API, Service workers, Vibration, and WebRTC, to deliver seamless and innovative user experiences"},
+                    { "keywords": ["Documentation"], "baseScore": 0, "content": "Created documentation to facilitate the understanding of a project of this magnitude. Including planning, architecture, functional requirements, implementation memory, deployment and CI/CD, monitoring and subsequent decisions for scalability"},
                     { "keywords": [], "baseScore": 0, "content": "Implemented design system methodology to increase efficiency and consistency across all projects, leveraging Storybook library to centralize component management and implementing visual automated testing to ensure consistent quality with every update"}
                 ], 
                 "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]

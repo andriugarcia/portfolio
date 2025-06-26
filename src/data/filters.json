@@ -1,6 +1,7 @@
 {
     "Vanilla JS": { "name": "Vanilla JS", "type": "Frontend Frameworks", "color": "yellow" },
     "Awarded Website": { "name": "Awarded Website", "type": "Outcomes", "color": "yellow" },
+    "Improved UX": { "name": "Improved UX", "type": "Outcomes", "color": "blue" },
     "Cost Reduction": { "name": "Cost Reduction", "type": "Outcomes", "color": "green" },
     "Vue.js": { "name": "Vue.js", "type": "Frontend Frameworks", "color": "green" },
     "Browser API": { "name": "Browser API", "type": "Frontend Frameworks", "color": "orange" },
