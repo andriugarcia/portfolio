@@ -10,7 +10,7 @@ function mapExperienceToPDFTableBody(experience: Experience[]) {
       body.push([
         {
           content: exp.company,
-          styles: { fontStyle: "bold" },
+          styles: { fontStyle: "bold", fontSize: 16 },
         },
         {
           content: `${exp.location} | ${exp.startDate} – ${exp.endDate}`,
@@ -132,13 +132,13 @@ export default (experience: Experience[]) => {
       ],
       [
         {
-          content: "Computer Engineering and Business Administration (Information Systems Mention)",
+          content: "Computer Engineering and Business Administration (Information Systems)",
           colSpan: 2
         }
       ],
       [
         {
-          content: "• Completed 20+ projects, with 2 evolving into startups. Contributed to design, UX, performance, and security.",
+          content: "• Worked on 20+ projects while studying, with 2 evolving into business",
           colSpan: 2
         }
       ]
