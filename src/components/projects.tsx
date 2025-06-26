@@ -87,13 +87,18 @@ export function Projects() {
     setKeywords([]);
   }
 
+  const getRandomColor = () => {
+    const colorStrings = ['green', 'blue', 'pink', 'purple', 'red', 'yellow', 'gray', 'orange', 'teal', 'cyan', 'indigo', 'lime', 'amber', 'emerald', 'rose', 'slate']
+    return colorStrings[Math.floor(Math.random() * colorStrings.length)];
+  }
+
   const ProjectList = () => (<>
   {
     filteredExperience.map((experience) => (
-        <div key={experience.company} className="mt-5" key={experience.company}>
+        <Card key={experience.company} className="mt-5 gap-1" key={experience.company}>
             <div className="ml-4 text-2xl text-wrap">{experience.company}</div>
             <div className="ml-4 text-muted-foreground mb-4">{experience.team}</div>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside mb-2 ml-4">
                 {
                     experience.highlights.map((highlight) => (
                         <li key={highlight.content} className="text-pretty">{highlight.content} {
@@ -106,7 +111,7 @@ export function Projects() {
             </ul>
             {
                 experience.projects.map((project) => (
-                    <Card className="relative px-4 mb-2" key={project.name}>
+                    <Card color={getRandomColor()} className="relative px-4 mb-2 mx-3" key={project.name}>
                         <div className="flex items-center justify-between">
                           <div className="font-semibold">{ project.name } </div>
                           <Button>
@@ -123,14 +128,14 @@ export function Projects() {
                         </div>
                         <div>
                           <div className="text-muted-foreground font-bold tracking-wider text-green-50/70 mb-2">ABOUT THIS PROJECT</div>
-                          <p className="mb-2 text-pretty max-w-prose text-green-50">{ project.description }</p>
+                          <p className="mb-2 text-pretty text-green-50">{ project.description }</p>
                         </div>
                         <div>
                           <div className="text-muted-foreground font-bold tracking-wider text-purple-50/70 mb-2">HIGHLIGHTS</div>
                           <ul className="list-disc list-inside">
                               {
                                   project.highlights.map((highlight) => (
-                                      <li className="text-pretty max-w-prose text-purple-50">{highlight.content} {
+                                      <li className="text-pretty text-purple-50">{highlight.content} {
                                         highlight.matchedKeywords.map((kw) => (
                                           <Badge key={kw} variant="outline" className="text-xs">{kw}</Badge>
                                         ))
@@ -192,7 +197,7 @@ export function Projects() {
                     </Card>
                 ))
             }
-        </div>
+        </Card>
         
     ))
 }
@@ -203,7 +208,7 @@ export function Projects() {
         <Card className="basis-[360px] pt-4 px-4 border-r-1 border-grey h-full flex flex-col hidden md:block">
             <h2 className="text-2xl font-bold tracking-tight">Stack</h2>
             <p className="text-muted-foreground text-sm mb-2">Choose filters to showcase the enhanced experience</p>
-            <ScrollArea className="w-full h-full">
+            <ScrollArea className="w-full h-full pb-16">
               <FilterSelector selectedFilters={selectedFilters} addFilter={addFilter}></FilterSelector>
             </ScrollArea>
         </Card>
