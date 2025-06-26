@@ -3,25 +3,25 @@
         "company": "Vonage",
         "role": "Senior Frontend Engineer",
         "team": "Customer Dashboard - Frontend Tooling Squad",
-        "baseScore": 10,
+        "baseScore": 20,
         "startDate": "Aug 2022",
         "endDate": "present",
         "location": "Remote",
         "highlights": [
-            { "content": "Collaborated in peer programming with junior developers, conducted technical interviews, and performed code reviews to ensure quality and maintain coding standards", "keywords": ["Peer Programming"], "baseScore": 0 }
+            { "content": "Led frontend development for over 2 teams and more than 10 projects. Created detailed documentation and shared architectural decisions across multiple teams. Collaborated in peer programming sessions with developers, conducted technical interviews, and performed code reviews to uphold high coding standards and foster team development.", "keywords": [""], "baseScore": 10 }
         ],
         "projects": [
             { 
                 "name": "Dashboard Components Library", 
-                "description": "A component that utilizes our internal design library to help developers across teams avoid reimplementing the same components for dashboards.",
+                "description": "Self-initiated project to unify and streamline dashboard development across the company by creating a component library where devs can create their components. Designed the library to be easily extensible and contribution-friendly, enabling teams to collaborate, avoid duplicate work, and accelerate delivery of consistent, high-quality UI components.",
                 "baseScore": 10,
                 "highlights": [
                     { "content": "Contributor and project owner, conducting code reviews to accept contributions from other developers.", "keywords": ["Ownership", "Code Reviews"], "baseScore": 10 },
-                    { "content": "Created documentation to help developers contribute to or use the library.", "keywords": ["Documentation", "Code Reviews"], "baseScore": 0 },
+                    { "content": "Created documentation to help developers contribute to or use the library.", "keywords": ["Documentation"], "baseScore": 0 },
                     { "content": "Added unit tests and E2E tests using Vue Test Utils and Storybook, enabling developers to reuse components without needing to add additional tests.", "keywords": ["Unit Tests", "E2E Tests", "Vue Test Utils", "Storybook"], "baseScore": 0 },
-                    { "content": "Implemented a CI/CD pipeline to deploy the library upon merging, with the ability to create snapshots for QA.", "keywords": ["CI/CD", "QA", "Snapshots"], "baseScore": 0 }
+                    { "content": "Implemented a CI/CD pipeline to deploy the library upon merging, with the ability to create snapshots for QA.", "keywords": ["CI/CD"], "baseScore": 0 }
                 ],
-                "stack": ["Vue.js", "Storybook", "Vue Test Utils", "CI/CD"]
+                "stack": ["Vue.js", "Storybook", "Vue Test Utils"]
             },
             {
                 "name": "Customer Dashboard",
@@ -30,26 +30,26 @@
                 "highlights": [
                     {
                         "content": "Refactored several products to migrate them to the micro-frontend architecture, improving modularity and maintainability.",
-                        "keywords": ["Micro Frontends", "Refactoring", "Architecture"],
+                        "keywords": ["Micro Frontends", "Good Practices"],
                         "baseScore": 10
                     },
                     {
                         "content": "Developed templates, workflows, and libraries to standardize micro-frontend practices and ensure consistency across teams.",
-                        "keywords": ["Templates", "Workflows", "Libraries", "Consistency"],
+                        "keywords": ["Good Practices"],
                         "baseScore": 0
                     },
                     {
                         "content": "Created a deployment workflow to serve micro-frontends on S3 and make them available directly in the dashboard.",
-                        "keywords": ["Deployment", "S3", "Workflow", "Dashboard"],
+                        "keywords": ["AWS", "CI/CD"],
                         "baseScore": 0
                     },
                     {
                         "content": "Implemented CI workflows to check linting, run tests, and detect build errors before PR approval, ensuring code quality.",
-                        "keywords": ["CI", "Linting", "Testing", "Build", "Quality"],
+                        "keywords": ["CI/CD"],
                         "baseScore": 0
                     }
                 ],
-                "stack": ["Vue.js", "Micro Frontends", "CI/CD", "S3", "Templates", "Workflows"]
+                "stack": ["Vue.js", "Micro Frontends", "CI/CD", "AWS"]
             },
             {
                 "name": "Partner Portal", 
@@ -62,17 +62,17 @@
                         "content": "Interviewed, onboarded, and mentored an agile team of 8 developers" 
                     },
                     { 
-                        "keywords": ["Micro Frontends", "Architecture", "Communication"], 
+                        "keywords": ["Micro Frontends"], 
                         "baseScore": 10, 
                         "content": "Designed an architecture for micro frontends, to determine how they should communicate with each other." 
                     },
-                    { 
+                    {
                         "keywords": ["Unit Tests", "Mockito", "Vue Test Utils"], 
                         "baseScore": 0, 
                         "content": "Added unit tests on the backend with Mockito and on the frontend using Vue Test Utils to ensure code quality and reliability." 
                     },
                     { 
-                        "keywords": ["Microservices", "Backend Development"], 
+                        "keywords": ["Microservices"], 
                         "baseScore": 0, 
                         "content": "Developed the backend based on a microservices architecture to support the multi-tenant dashboard." 
                     }
@@ -85,22 +85,22 @@
                 "baseScore": 0,
                 "highlights": [
                     { 
-                        "keywords": ["No Code", "Platform Design"], 
+                        "keywords": ["No Code"], 
                         "baseScore": 0, 
                         "content": "Taken the initiative to redesign and implement the no-code template editor, significantly improving the productivity of internal employees." 
                     },
                     { 
-                        "keywords": ["No Code", "Migration", "Security", "Cost Reduction"], 
+                        "keywords": ["No Code", "Security", "Cost Reduction"], 
                         "baseScore": 0, 
                         "content": "Migrated an entire internal tool to our no-code platform, saving cloud costs and increasing security by reducing vulnerabilities." 
                     },
                     { 
-                        "keywords": ["No Code", "APIs", "Internal Tools"], 
+                        "keywords": ["No Code", "Cost Reduction", "Security"], 
                         "baseScore": 0, 
                         "content": "Migrated an entire project to an in-house no-code platform, eliminating 20+ security vulnerabilities, removing the need for a separate maintenance project, and reducing cloud costs by 30% (including web server, database, and backend)." 
                     }
                 ],
-                "stack": ["Vue.js", "No Code", "API"]
+                "stack": ["Vue.js", "No Code", "API", "Dashboards"]
             }
         ]
     },
@@ -113,11 +113,10 @@
         "baseScore": 10,
         "location": "Remote",
         "highlights": [
-            { "content": "Delivered 3 award-winning projects with advanced designs and animations. Awards: 2 Honorable Mentions at Awwwards, 'Site of the Day' at Mindsparkle and CSSWinner.", "keywords": ["Design", "Awards", "Animations", "Frontend"], "baseScore": 0 },
-            { "content": "Integrated Sentry for real-time error monitoring, reducing client issues and enabling resolution within 24 hours.", "keywords": ["Monitoring", "Sentry", "Error Tracking", "DevOps"], "baseScore": 0 },
-            { "content": "Accelerated project setup by creating a standardized template repository and build process using Git and Webpack.", "keywords": ["Project Setup", "Templates", "Git", "Webpack", "Automation"], "baseScore": 0 },
-            { "content": "Enhanced team communication and project delivery by implementing agile methodologies and SCRUM-based planning in Asana.", "keywords": ["SCRUM", "Agile", "Project Management", "Asana", "Teamwork"], "baseScore": 0 },
-            { "content": "Implemented CI/CD with GitHub Actions for automatic staging updates, improving development and QA efficiency.", "keywords": ["CI/CD", "GitHub Actions", "Automation", "QA", "DevOps"], "baseScore": 0 }
+            { "content": "Delivered 3 award-winning projects with advanced designs and animations. Awards: 2 Honorable Mentions at Awwwards, 'Site of the Day' at Mindsparkle and CSSWinner.", "keywords": ["Awarded Website", "Custom Animations"], "baseScore": 0 },
+            { "content": "Integrated Sentry for real-time error monitoring, reducing client issues and enabling resolution within 24 hours.", "keywords": ["Monitoring", "Sentry", "DevOps"], "baseScore": 0 },
+            { "content": "Accelerated project setup by creating a standardized template repository and build process using Git and Webpack.", "keywords": ["Git", "Webpack"], "baseScore": 0 },
+            { "content": "Implemented CI/CD with GitHub Actions for automatic staging updates, improving development and QA efficiency.", "keywords": ["CI/CD", "GitHub Actions", "QA", "DevOps"], "baseScore": 0 }
         ],
         "projects": [
             { 
@@ -127,23 +126,23 @@
                 "highlights": [
                     { 
                         "content": "Created an extensible infrastructure which allows to easily extend the capabilities of the chatbot for new clients.", 
-                        "keywords": ["Extensible Infrastructure", "Chatbot"], 
+                        "keywords": ["Chatbot"], 
                         "baseScore": 0 
                     },
                     {
                         "content": "Created a design system for the chatbot which allows performing different animations and transitions during the conversation flow.", 
-                        "keywords": ["Design System", "Animations", "Transitions"], 
+                        "keywords": ["Design System", "Custom Animations"], 
                         "baseScore": 0 
                     }
                 ],
-                "stack": ["React", "Vite", "LLM", "Voice Recognition", "Design System"]
+                "stack": ["AI", "Chatbot", "React", "Vite", "LLM", "Browser API", "Design System"]
             },
             {
                 "name": "AI Manuscript Analyzer", 
                 "description": "Developed a platform that uses AI-driven manuscript analysis to help authors and editors enhance their stories and fully realize their potential.", 
                 "baseScore": 0,
                 "highlights": [
-                    {"content": "Created a collection of graphics at home using SVG animations with the ability to react based on data and user decisions", "keywords": ["SVG", "Animations", "Components"], "baseScore": 0}
+                    {"content": "Created a collection of graphics at home using SVG animations with the ability to react based on data and user decisions", "keywords": ["Custom Animations"], "baseScore": 0}
                 ],
                 "stack": ["Next.js", "Pytorch", "Firebase", "Stripe"] 
             },
@@ -203,12 +202,13 @@
         "endDate": "",
         "location": "",
         "highlights": [
-            { "content": "Collaborated in peer programming with junior developers, conducted technical interviews, and performed code reviews to ensure quality and maintain coding standards", "keywords": ["Peer Programming"], "baseScore": 0 }
+            { "content": "Collaborated in peer programming with junior developers, conducted technical interviews, and performed code reviews to ensure quality and maintain coding standards", "keywords": [], "baseScore": 10 }
         ],
         "projects": [
         {
                 "name": "Olimaps", 
                 "description": "Conceptualized, designed, and developed the full range of features for a social network, including architecture, mobile-first UI, database, frontend, and backend development",
+                "github": "https://github.com/andriugarcia/Olimaps-Frontend",
                 "baseScore": 0,
                 "images": ["/olimaps/arch.jpeg", "/olimaps/physical-design.jpeg", "/olimaps/db.jpeg"],
                 "highlights": [
@@ -233,6 +233,16 @@
                     { "keywords": [], "baseScore": 0, "content": "Executed technical SEO strategies, including SSR, Open Graph, semantic HTML, and structured data, getting 100 score on lighthouse"}                    
                 ], 
                 "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
+            },
+            {
+                "name": "Notion Graph View", 
+                "description": "",
+                "baseScore": 0,
+                "website": "https://www.notion.so/Graph-139abe7b7d0280948c2bdf75ea07dd13?duplicate=true&pvs=36&utm_source=public_page&utm_content=duplicate_button&tid=8ebfc22b0ee542819fba99f0d57879e6&from=public_page&n=duplicate_public_page",
+                "highlights": [
+                    { "keywords": [], "baseScore": 0, "content": ""}
+                ], 
+                "stack": ["React", "Next.js"]
             },
             {
                 "name": "Knowledge Share Platform", 
