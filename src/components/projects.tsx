@@ -96,8 +96,8 @@ export function Projects() {
   {
     filteredExperience.map((experience) => (
         <Card key={experience.company} className="mt-5 gap-1" key={experience.company}>
-            <div className="ml-4 text-2xl text-wrap">{experience.company}</div>
-            <div className="ml-4 text-muted-foreground mb-4">{experience.team}</div>
+            <div className="ml-4 text-2xl text-wrap">{experience.role}</div>
+            <div className="ml-4 text-muted-foreground mb-4">{experience.company} - {experience.team}</div>
             <ul className="list-disc list-inside mb-2 ml-4">
                 {
                     experience.highlights.map((highlight) => (
