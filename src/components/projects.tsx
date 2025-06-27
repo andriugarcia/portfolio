@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge"
 import useExperienceSearch from "@/hooks/use-experience-search"
 import type { Filter } from "@/types/filter";
 import { useEffect, useState } from "react";
-import { X, ExternalLink, FileDown } from "lucide-react";
+import { Github, ExternalLink, FileDown } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area"
 import generateResumePDF from "@/resume/resume"
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
@@ -114,15 +114,26 @@ export function Projects() {
                     <Card color={getRandomColor()} className="relative px-4 mb-2 mx-3" key={project.name}>
                         <div className="flex items-center justify-between">
                           <div className="font-semibold">{ project.name } </div>
+                          <div className="flex gap-2">
+                            {
+                              project.github &&  
+                              <a href={project.github} target="_blank" className="cursor-pointer">
+                                <Button variant="outline">
+                                  <Github></Github>
+                                  <ExternalLink></ExternalLink>
+                                </Button>
+                              </a>
+                            }
                             {
                               project.website &&  
-                              <a href={project.website} target="_blank">
+                              <a href={project.website} target="_blank" className="cursor-pointer">
                                 <Button>
                                   <div className="hidden md:block">Visit Site</div>
                                   <ExternalLink></ExternalLink>
                                 </Button>
                               </a>
                             }
+                          </div>
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {

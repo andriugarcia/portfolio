@@ -146,12 +146,13 @@
                 "highlights": [
                     {"content": "Created a collection of graphics at home using SVG animations with the ability to react based on data and user decisions", "keywords": ["Custom Animations"], "baseScore": 0}
                 ],
-                "stack": ["Next.js", "Pytorch", "Firebase", "Stripe"] 
+                "stack": ["Next.js", "Pytorch", "Firebase", "Stripe"]
             },
             {
                 "name": "Landing Page for Marketing Agency", 
                 "description": "", 
                 "baseScore": 0,
+                "website": "https://zandbeek.com/",
                 "highlights": [
                     {"content": "", "keywords": [""], "baseScore": 0}
                 ],
@@ -162,6 +163,7 @@
                 "name": "Real Estate", 
                 "description": "",
                 "baseScore": 0,
+                "website": "https://layers-development.nl/",
                 "highlights": [
                     { "keywords": [], "baseScore": 0, "content": ""}
                 ], 
@@ -172,7 +174,7 @@
     },
     {
         "company": "Side Hustles",
-        "role": "",
+        "role": "Full Stack Developer",
         "team": "Projects I have worked on independently",
         "baseScore": 0,
         "startDate": "",
@@ -195,21 +197,21 @@
                     { "keywords": ["Documentation"], "baseScore": 0, "content": "Created documentation to facilitate the understanding of a project of this magnitude. Including planning, architecture, functional requirements, implementation memory, deployment and CI/CD, monitoring and subsequent decisions for scalability"},
                     { "keywords": [], "baseScore": 0, "content": "Implemented design system methodology to increase efficiency and consistency across all projects, leveraging Storybook library to centralize component management and implementing visual automated testing to ensure consistent quality with every update"}
                 ], 
-                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
+                "stack": ["Vue.js", "Nuxt.js", "Node.js", "Express", "Prisma.js", "Typescript", "Firebase", "Storybook", "Mapbox", "Socket.io", "AWS"]
             },
             {
                 "name": "Pantala", 
-                "description": "",
+                "description": "Co-founder of a sustainable clothing economy company, which involved major challenges from a technological infrastructure due to orders management.",
                 "baseScore": 0,
                 "highlights": [
-                    { "keywords": [], "baseScore": 0, "content": "Collaborated closely with stakeholders, including partners and clients, to understand their business requirements and translate them into actionable tasks for the development team"},
-                    { "keywords": [], "baseScore": 0, "content": "Successfully drove conversion rate to 10% and reached a user base of 20,000 securing a 200K funding round, reducing landing page friction using data-driven approach with A/B testing and conversion funnel analysis, utilizing tools such as Google Analytics, HubSpot, and Facebook Pixel"},
-                    { "keywords": [], "baseScore": 0, "content": "Architected and selected frontend stack (\textbf{Vue.js} (Nuxt and Vuex)) for landing page, customer order dashboard, and logistics dashboard. Ensured centralized data and maintained consistency across projects"},
-                    { "keywords": [], "baseScore": 0, "content": "Maximized frontend performance using techniques such as SSR, lazy-loading, caching, dynamic imports, preloading, minifying, and using webp images, reducing largest contenful paint from 5s to 0.60s"},
-                    { "keywords": [], "baseScore": 0, "content": "Implemented end-to-end and unit testing using Cypress and Jest to verify the correct behavior of the app across browsers in addition to ensure the accuracy and reliability of individual components"},
-                    { "keywords": [], "baseScore": 0, "content": "Executed technical SEO strategies, including SSR, Open Graph, semantic HTML, and structured data, getting 100 score on lighthouse"}                    
+                    { "keywords": [], "baseScore": 10, "content": "Collaborated closely with stakeholders, including partners and clients, to understand their business requirements and translate them into actionable tasks for the development team"},
+                    { "keywords": ["State Management"], "baseScore": 10, "content": "Architected and selected frontend stack (Vue.js, Nuxt and Vuex) for landing page, customer order dashboard, and logistics dashboard. Ensured centralized data and maintained consistency across projects"},
+                    { "keywords": ["A/B testing", "Improved UX"], "baseScore": 0, "content": "Successfully drove conversion rate to 10% and reached a user base of 20,000 securing a 200K funding round, reducing landing page friction using data-driven approach with A/B testing and conversion funnel analysis, utilizing tools such as Google Analytics, HubSpot, and Facebook Pixel"},
+                    { "keywords": ["Performance", "SSR"], "baseScore": 0, "content": "Maximized frontend performance using techniques such as SSR, lazy-loading, caching, dynamic imports, preloading, minifying, and using webp images, reducing largest contenful paint from 5s to 0.60s"},
+                    { "keywords": ["E2E Tests", "Unit Tests"], "baseScore": 0, "content": "Implemented end-to-end and unit testing using Cypress and Jest to verify the correct behavior of the app across browsers in addition to ensure the accuracy and reliability of individual components"},
+                    { "keywords": ["SEO", "SSR"], "baseScore": 0, "content": "Executed technical SEO strategies, including SSR, Open Graph, semantic HTML, and structured data, getting 100 score on lighthouse"}      
                 ], 
-                "stack": ["Vanilla JS", "Webpack", "Gulp", "Docker", "SASS", "GSAP", "Figma"]
+                "stack": ["Vue.js", "PostgreSQL", "Nuxt", "Firebase", "Stripe", "Node.js", "Nest.js"]
             },
             {
                 "name": "Notion Graph View", 
@@ -235,10 +237,10 @@
                 "description": "Tinder like app where users vote if they like a garment more or less, as they vote the recommendation algorithm learns from their tastes and starts to recommend better and better garments that the user might like",
                 "baseScore": 0,
                 "highlights": [
-                    { "keywords": [""], "baseScore": 0, "content": "Significantly improved user engagement by leveraging graph databases to recommend clothes based on users with similar tastes"},
-                    { "keywords": [""], "baseScore": 0, "content": "Utilizing kNN within the garment query without the need to generate a model resulted in an algorithm that continually provides better and more personalized results to users"}
+                    { "keywords": ["Graph Databases", "Neo4j"], "baseScore": 0, "content": "Significantly improved user engagement by leveraging graph databases to recommend clothes based on users with similar tastes"},
+                    { "keywords": ["Data Analysis"], "baseScore": 0, "content": "Utilizing kNN within the garment query without the need to generate a model resulted in an algorithm that continually provides better and more personalized results to users"}
                 ], 
-                "stack": []
+                "stack": ["React", "Neo4j", "Graph Databases"]
             },
             {
                 "name": "AI Product Wizard", 
