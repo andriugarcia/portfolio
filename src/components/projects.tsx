@@ -114,10 +114,15 @@ export function Projects() {
                     <Card color={getRandomColor()} className="relative px-4 mb-2 mx-3" key={project.name}>
                         <div className="flex items-center justify-between">
                           <div className="font-semibold">{ project.name } </div>
-                          <Button>
-                            <div className="hidden md:block">Visit Site</div>
-                            <ExternalLink></ExternalLink>
-                          </Button>
+                            {
+                              project.website &&  
+                              <a href={project.website} target="_blank">
+                                <Button>
+                                  <div className="hidden md:block">Visit Site</div>
+                                  <ExternalLink></ExternalLink>
+                                </Button>
+                              </a>
+                            }
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {
