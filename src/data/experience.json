@@ -27,6 +27,7 @@
                 "name": "Customer Dashboard",
                 "description": "Platform for customers to configure and get information about different company APIs. Implemented as a micro-frontend, where each subpage is a separate project.",
                 "baseScore": 10,
+                "website": "https://dashboard.vonage.com/",
                 "highlights": [
                     {
                         "content": "Refactored several products to migrate them to the micro-frontend architecture, improving modularity and maintainability.",
@@ -54,6 +55,7 @@
             {
                 "name": "Partner Management Portal", 
                 "description": "A platform for partners to manage their accounts, view analytics, and access resources. Developed as a micro-frontend to allow independent development and deployment across teams.", 
+                "website": "https://management.vonage.com/",
                 "baseScore": 0,
                 "highlights": [
                     { 
