@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge"
 import useExperienceSearch from "@/hooks/use-experience-search"
 import type { Filter } from "@/types/filter";
 import { useEffect, useState } from "react";
-import { X, ExternalLink, FileDown } from "lucide-react";
+import { Github, ExternalLink, FileDown } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area"
 import generateResumePDF from "@/resume/resume"
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
@@ -87,13 +87,18 @@ export function Projects() {
     setKeywords([]);
   }
 
+  const getRandomColor = () => {
+    const colorStrings = ['green', 'blue', 'pink', 'purple', 'red', 'yellow', 'gray', 'orange', 'teal', 'cyan', 'indigo', 'lime', 'amber', 'emerald', 'rose', 'slate']
+    return colorStrings[Math.floor(Math.random() * colorStrings.length)];
+  }
+
   const ProjectList = () => (<>
   {
     filteredExperience.map((experience) => (
-        <div key={experience.company} className="mt-5" key={experience.company}>
-            <div className="ml-4 text-2xl text-wrap">{experience.company}</div>
-            <div className="ml-4 text-muted-foreground mb-4">{experience.team}</div>
-            <ul className="list-disc list-inside">
+        <Card key={experience.company} className="mt-5 gap-1" key={experience.company}>
+            <div className="ml-4 text-2xl text-wrap">{experience.role}</div>
+            <div className="ml-4 text-muted-foreground mb-4">{experience.company} - {experience.team}</div>
+            <ul className="list-disc list-inside mb-2 ml-4">
                 {
                     experience.highlights.map((highlight) => (
                         <li key={highlight.content} className="text-pretty">{highlight.content} {
@@ -106,13 +111,29 @@ export function Projects() {
             </ul>
             {
                 experience.projects.map((project) => (
-                    <Card className="relative px-4 mb-2" key={project.name}>
+                    <Card color={getRandomColor()} className="relative px-4 mb-2 mx-3" key={project.name}>
                         <div className="flex items-center justify-between">
                           <div className="font-semibold">{ project.name } </div>
-                          <Button>
-                            <div className="hidden md:block">Visit Site</div>
-                            <ExternalLink></ExternalLink>
-                          </Button>
+                          <div className="flex gap-2">
+                            {
+                              project.github &&  
+                              <a href={project.github} target="_blank" className="cursor-pointer">
+                                <Button variant="outline">
+                                  <Github></Github>
+                                  <ExternalLink></ExternalLink>
+                                </Button>
+                              </a>
+                            }
+                            {
+                              project.website &&  
+                              <a href={project.website} target="_blank" className="cursor-pointer">
+                                <Button>
+                                  <div className="hidden md:block">Visit Site</div>
+                                  <ExternalLink></ExternalLink>
+                                </Button>
+                              </a>
+                            }
+                          </div>
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {
@@ -192,7 +213,7 @@ export function Projects() {
                     </Card>
                 ))
             }
-        </div>
+        </Card>
         
     ))
 }
@@ -203,7 +224,7 @@ export function Projects() {
         <Card className="basis-[360px] pt-4 px-4 border-r-1 border-grey h-full flex flex-col hidden md:block">
             <h2 className="text-2xl font-bold tracking-tight">Stack</h2>
             <p className="text-muted-foreground text-sm mb-2">Choose filters to showcase the enhanced experience</p>
-            <ScrollArea className="w-full h-full">
+            <ScrollArea className="w-full h-full pb-16">
               <FilterSelector selectedFilters={selectedFilters} addFilter={addFilter}></FilterSelector>
             </ScrollArea>
         </Card>

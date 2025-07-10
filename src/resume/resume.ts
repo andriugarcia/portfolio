@@ -3,81 +3,85 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
 function mapExperienceToPDFTableBody(experience: Experience[]) {
-    const body: any[] = [];
+  const body: any[] = [];
   
-    experience.forEach((exp) => {
-      // Row 1: Company and dates
-      body.push([
-        {
-          content: exp.company,
-          styles: { fontStyle: "bold" },
-        },
-        {
-          content: `${exp.location} | ${exp.startDate} – ${exp.endDate}`,
-          styles: { halign: "right" },
-        },
-      ]);
+  experience.forEach((exp) => {
+    // Row 1: Company and dates
+    body.push([
+    {
+      content: exp.company,
+      styles: { fontStyle: "bold", fontSize: 16 },
+    },
+    {
+      content: `${exp.location} | ${exp.startDate} – ${exp.endDate}`,
+      styles: { halign: "right" },
+    },
+    ]);
   
-      // Row 2: Role and team (if available)
-      const roleText = exp.team
-        ? `${exp.role} – ${exp.team}`
-        : exp.role;
-      body.push([
-        {
-          content: roleText,
-          colSpan: 2,
-        },
-      ]);
+    // Row 2: Role and team (if available)
+    const roleText = exp.team
+    ? `${exp.role} – ${exp.team}`
+    : exp.role;
+    body.push([
+    {
+      content: roleText,
+      colSpan: 2,
+    },
+    ]);
   
-      // Row 3: Highlights
-      let highlightText = exp.highlights
-        .map((h) => `• ${h.content}`)
-        .join("\n");
+    // Row 3: Highlights
+    let highlightText = exp.highlights
+    .map((h) => `• ${h.content}`)
+    .join("\n");
+
+    body.push([
+    {
+      content: highlightText,
+      colSpan: 2,
+    },
+    ]);
+
+    // Add each project with styled name and description
+    exp.projects.forEach((project) => {
+    // Project name row with anchors
+    const projectNameContent = `${project.name} `;
+    const projectWebsite = project.website ? `(${project.website})` : '';
+    const projectGithub = project.github ? `(${project.github})` : '';
+
+    body.push([
+      {
+      content: projectNameContent + projectWebsite + projectGithub,
+      styles: { fontStyle: "bold" },
+      colSpan: 2,
+      },
+    ]);
+
+    // Project description row
+    body.push([
+      {
+      content: project.description,
+      colSpan: 2,
+      },
+    ]);
+
+    // Project highlights row
+    if (project.highlights.length > 0) {
+      const projectHighlights = project.highlights
+      .map((h) => `• ${h.content}`)
+      .join("\n");
 
       body.push([
-        {
-          content: highlightText,
-          colSpan: 2,
-        },
+      {
+        content: projectHighlights,
+        colSpan: 2,
+      },
       ]);
-
-      // Add each project with styled name and description
-      exp.projects.forEach((project) => {
-        // Project name row
-        body.push([
-          {
-            content: project.name,
-            styles: { fontStyle: "bold" },
-            colSpan: 2,
-          },
-        ]);
-
-        // Project description row
-        body.push([
-          {
-            content: project.description,
-            colSpan: 2,
-          },
-        ]);
-
-        // Project highlights row
-        if (project.highlights.length > 0) {
-          const projectHighlights = project.highlights
-            .map((h) => `• ${h.content}`)
-            .join("\n");
-
-          body.push([
-            {
-              content: projectHighlights,
-              colSpan: 2,
-            },
-          ]);
-        }
-      });
-
+    }
     });
+
+  });
   
-    return body;
+  return body;
   }
 
 export default (experience: Experience[]) => {
@@ -101,10 +105,10 @@ export default (experience: Experience[]) => {
 
   // Example experience section (add more dynamically)
   autoTable(doc, {
-    startY: currentY,
-    theme: "plain",
-    styles: { fontSize: 10 },
-    body: mapExperienceToPDFTableBody(experience)
+  startY: currentY,
+  theme: "plain",
+  styles: { fontSize: 10 },
+  body: mapExperienceToPDFTableBody(experience)
   });
 
   currentY = doc.lastAutoTable.finalY + 10;
@@ -116,33 +120,33 @@ export default (experience: Experience[]) => {
   currentY += 6;
 
   autoTable(doc, {
-    startY: currentY,
-    theme: "plain",
-    styles: { fontSize: 10 },
-    body: [
-      [
-        {
-          content: "University of Granada",
-          styles: { fontStyle: "bold" }
-        },
-        {
-          content: "Granada, Spain | Sep 2016 – Jul 2022",
-          styles: { halign: "right" }
-        }
-      ],
-      [
-        {
-          content: "Computer Engineering and Business Administration (Information Systems Mention)",
-          colSpan: 2
-        }
-      ],
-      [
-        {
-          content: "• Completed 20+ projects, with 2 evolving into startups. Contributed to design, UX, performance, and security.",
-          colSpan: 2
-        }
-      ]
+  startY: currentY,
+  theme: "plain",
+  styles: { fontSize: 10 },
+  body: [
+    [
+    {
+      content: "University of Granada",
+      styles: { fontStyle: "bold" }
+    },
+    {
+      content: "Granada, Spain | Sep 2016 – Jul 2022",
+      styles: { halign: "right" }
+    }
+    ],
+    [
+    {
+      content: "Computer Engineering and Business Administration (Information Systems)",
+      colSpan: 2
+    }
+    ],
+    [
+    {
+      content: "• Worked on 20+ projects while studying, with 2 evolving into business",
+      colSpan: 2
+    }
     ]
+  ]
   });
 
   currentY = doc.lastAutoTable.finalY + 10;
@@ -156,15 +160,15 @@ export default (experience: Experience[]) => {
   doc.setFontSize(10);
   doc.setFont(undefined, "normal");
   doc.text(
-    [
-      "Languages: JavaScript, TypeScript, Java, HTML/CSS, SASS, Pug, Python, SQL, PHP",
-      "Frontend: Vue.js, Nuxt, React, Next, JAMStack, Tailwind, Bootstrap, Storybook, Webpack, Gulp",
-      "Backend: Node.js, Express, REST, GraphQL, Prisma, Swagger, Wordpress, Sockets",
-      "Databases: PostgreSQL, Oracle, MySQL, MongoDB, Redis, Firebase, DynamoDB, Neo4j, ElasticSearch",
-      "Cloud & Tools: Git, Docker, Kubernetes, Jenkins, AWS, Azure, Heroku, Cloudflare, VSCode, Jira, Asana"
-    ],
-    15,
-    currentY
+  [
+    "Languages: JavaScript, TypeScript, Java, HTML/CSS, SASS, Pug, Python, SQL, PHP",
+    "Frontend: Vue.js, Nuxt, React, Next, JAMStack, Tailwind, Bootstrap, Storybook, Webpack, Gulp",
+    "Backend: Node.js, Express, REST, GraphQL, Prisma, Swagger, Wordpress, Sockets",
+    "Databases: PostgreSQL, Oracle, MySQL, MongoDB, Redis, Firebase, DynamoDB, Neo4j, ElasticSearch",
+    "Cloud & Tools: Git, Docker, Kubernetes, Jenkins, AWS, Azure, Heroku, Cloudflare, VSCode, Jira, Asana"
+  ],
+  15,
+  currentY
   );
 
   // Save
