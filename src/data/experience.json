@@ -225,13 +225,13 @@
             },
             {
                 "name": "Notion Graph View", 
-                "description": "",
+                "description": "A tool that visualizes your entire Notion workspace as an interactive graph, allowing you to explore how pages are connected to each other and through databases. Easily discover relationships, navigate between linked content, and gain insights into your workspace structure.",
                 "baseScore": 0,
                 "website": "https://www.notion.so/Graph-139abe7b7d0280948c2bdf75ea07dd13?duplicate=true&pvs=36&utm_source=public_page&utm_content=duplicate_button&tid=8ebfc22b0ee542819fba99f0d57879e6&from=public_page&n=duplicate_public_page",
                 "highlights": [
-                    { "keywords": [], "baseScore": 0, "content": ""}
+                    { "keywords": [""], "baseScore": 0, "content": ""}
                 ], 
-                "stack": ["React", "Next.js"]
+                "stack": ["React", "Next.js", "D3.js"]
             },
             {
                 "name": "Knowledge Share Platform", 
@@ -244,7 +244,7 @@
             },
             {
                 "name": "Clothing Recommender", 
-                "description": "Tinder like app where users vote if they like a garment more or less, as they vote the recommendation algorithm learns from their tastes and starts to recommend better and better garments that the user might like",
+                "description": "Swipe left/right app where users vote if they like a garment more or less, as they vote the recommendation algorithm learns from their tastes and starts to recommend better and better garments that the user might like",
                 "baseScore": 0,
                 "highlights": [
                     { "keywords": ["Graph Databases", "Neo4j"], "baseScore": 0, "content": "Significantly improved user engagement by leveraging graph databases to recommend clothes based on users with similar tastes"},
