@@ -11,10 +11,19 @@
             { "content": "Led frontend development for over 2 teams and more than 10 projects. Created detailed documentation and shared architectural decisions across multiple teams. Collaborated in peer programming sessions with developers, conducted technical interviews, and performed code reviews to uphold high coding standards and foster team development.", "keywords": [""], "baseScore": 10 }
         ],
         "projects": [
-            { 
+            {
+                "name": "Solution Discovery AI", 
+                "description": "A platform that uses AI to help customers discover the best solutions for their needs. It provides a user-friendly interface to make the user know what services fit their needs, and guides them through the process of selecting and implementing the right solutions.",
+                "baseScore": 10,
+                "highlights": [
+                    { "content": "Built a conversational assistant platform that leverages AI to provide real-time, friendly recommendations to users. The assistant dynamically updates suggestions based on user input, ensuring an engaging and interactive experience throughout the conversation.", "keywords": ["Improved UX"], "baseScore": 10 }
+                ],
+                "stack": ["Vue.js", "AI", "AWS"]
+            },
+            {
                 "name": "Dashboard Components Library", 
                 "description": "Self-initiated project to unify and streamline dashboard development across the company by creating a component library where devs can create their components. Designed the library to be easily extensible and contribution-friendly, enabling teams to collaborate, avoid duplicate work, and accelerate delivery of consistent, high-quality UI components.",
-                "baseScore": 10,
+                "baseScore": 20,
                 "highlights": [
                     { "content": "Contributor and project owner, conducting code reviews to accept contributions from other developers.", "keywords": ["Ownership", "Code Reviews"], "baseScore": 10 },
                     { "content": "Created documentation to help developers contribute to or use the library.", "keywords": ["Documentation"], "baseScore": 0 },
@@ -25,12 +34,12 @@
             },
             {
                 "name": "Customer Dashboard",
-                "description": "Platform for customers to configure and get information about different company APIs. Implemented as a micro-frontend, where each subpage is a separate project.",
-                "baseScore": 10,
+                "description": "Platform for customers to configure and get information about different company APIs. Implemented as a micro-frontend architecture, where each subpage is a separate project.",
+                "baseScore": 20,
                 "website": "https://dashboard.vonage.com/",
                 "highlights": [
                     {
-                        "content": "Refactored several products to migrate them to the micro-frontend architecture, improving modularity and maintainability.",
+                        "content": "Refactored several products to migrate them to micro-frontends, improving modularity and maintainability.",
                         "keywords": ["Micro Frontends", "Good Practices"],
                         "baseScore": 10
                     },
@@ -122,9 +131,9 @@
         ],
         "projects": [
             { 
-                "name": "Voice Chatbot", 
-                "description": "Created a company assistant which uses LLM to get context to the company and interacts with end users through voice, designed to recommend and also perform actions like scheduling a call or registering.",
-                "baseScore": 0,
+                "name": "AI Virtual Assistant", 
+                "description": "Developed an AI-powered virtual assistant that delivers information and support through natural, conversational interactions. Designed for seamless integration into any company’s platform, the assistant is highly customizable and can be tailored to specific business needs, enhancing user engagement and automating customer support.",
+                "baseScore": 10,
                 "highlights": [
                     { 
                         "content": "Created an extensible infrastructure which allows to easily extend the capabilities of the chatbot for new clients.", 
@@ -137,6 +146,7 @@
                         "baseScore": 0 
                     }
                 ],
+                "images": ["/ai-assistant/mockup.png", "/ai-assistant/diagram.png", "/ai-assistant/store.png"],
                 "stack": ["AI", "Chatbot", "React", "Vite", "LLM", "Browser API", "Design System"]
             },
             {
