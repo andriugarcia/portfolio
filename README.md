@@ -5,8 +5,9 @@ A modern, fast, and responsive portfolio website built with **Astro** and **Tail
 ## ✨ Features
 
 - **🚀 Astro-powered**: Ultra-fast static site generation with optimal performance
-- **📱 Responsive Design**: Beautiful UI that works on all devices
+- **🔎 Recruiter Friendly**: The portfolio can be filtered by params to display only the essential information
 - **📄 Automatic Resume Generation**: Generate PDF resumes dynamically from JSON data
+- **📱 Responsive Design**: Beautiful UI that works on all devices
 - **🎨 Modern UI Components**: Built with Radix UI and Tailwind CSS
 - **⚡ Performance-first**: Optimized for speed and SEO
 - **🔧 TypeScript**: Fully typed for better development experience
