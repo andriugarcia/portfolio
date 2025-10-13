@@ -84,8 +84,20 @@ function mapExperienceToPDFTableBody(experience: Experience[]) {
   return body;
   }
 
-export default (experience: Experience[]) => {
+export default (experience: Experience[], currentUrl?: string) => {
   const doc = new jsPDF();
+
+  // Extract root domain from URL if provided
+  const extractRootDomain = (url: string): string => {
+    try {
+      const urlObj = new URL(url);
+      return urlObj.hostname;
+    } catch {
+      return 'andriugarcia.com'; // fallback
+    }
+  };
+
+  const portfolioUrl = currentUrl ? extractRootDomain(currentUrl) : 'andriugarcia.com';
 
   // Font setup
   doc.setFont("helvetica");
@@ -93,7 +105,38 @@ export default (experience: Experience[]) => {
   doc.text("Andriu García", 105, 20, { align: "center" });
 
   doc.setFontSize(10);
-  doc.text("hello@andriugarcia.com | linkedin.com/in/andriugarcia | github.com/andriugarcia", 105, 28, { align: "center" });
+  
+  // Contact information with clickable links
+  const contactY = 28;
+  const contactItems = [
+    { text: "hello@andriugarcia.com", url: "mailto:hello@andriugarcia.com" },
+    { text: "linkedin.com/in/andriugarcia", url: "https://linkedin.com/in/andriugarcia" },
+    { text: "github.com/andriugarcia", url: "https://github.com/andriugarcia" },
+    { text: portfolioUrl, url: currentUrl || `https://${portfolioUrl}` }
+  ];
+  
+  // Calculate total width to center the contact line
+  const separators = " | ";
+  const totalText = contactItems.map(item => item.text).join(separators);
+  const totalWidth = doc.getTextWidth(totalText);
+  const startX = (doc.internal.pageSize.width - totalWidth) / 2;
+  
+  let currentX = startX;
+  
+  contactItems.forEach((item, index) => {
+    const textWidth = doc.getTextWidth(item.text);
+    
+    // Add clickable link
+    doc.textWithLink(item.text, currentX, contactY, { url: item.url });
+    
+    currentX += textWidth;
+    
+    // Add separator except for last item
+    if (index < contactItems.length - 1) {
+      doc.text(separators, currentX, contactY);
+      currentX += doc.getTextWidth(separators);
+    }
+  });
 
   let currentY = 35;
 

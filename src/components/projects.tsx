@@ -247,7 +247,7 @@ export function Projects() {
                   <p className="text-muted-foreground text-sm mb-2">Projects I have worked on as a frontend developer</p>
                 </div>
               {showGenerateButton && (
-                <Button onClick={() => generateResumePDF(filteredExperience)}><div className="hidden md:block">Generate Resume </div><FileDown></FileDown></Button>
+                <Button onClick={() => generateResumePDF(filteredExperience, window.location.href)}><div className="hidden md:block">Generate Resume </div><FileDown></FileDown></Button>
               )}
               </div>
               <FilterBar selectedFilters={selectedFilters} onFilterClick={addFilter} onClear={clearFilters} onFilterMobileOpened={() => setFilterMobileOpened(prev => !prev)}/>
