@@ -107,12 +107,12 @@ export function Projects() {
   {
     filteredExperience.map((experience) => (
         <Card key={experience.company} className="mt-5 gap-1" key={experience.company}>
-            <div className="flex items-center justify-between">
-                <div className="ml-4 text-2xl text-wrap">{experience.role} <span className="text-muted-foreground font-normal text-lg">@ {experience.role}</span></div>
+            <div className="pr-6 flex items-center justify-between">
+                <div className="ml-4 text-2xl text-wrap">{experience.role} <span className="text-muted-foreground font-normal text-lg">@ {experience.company}</span></div>
                 <div className="text-muted-foreground text-sm">{experience.startDate} - {experience.endDate}</div>
             </div>
-            <div className="ml-4 text-muted-foreground mb-4">{experience.company} - {experience.team}</div>
-            <ul className="list-disc list-inside mb-2 ml-4">
+            <div className="ml-4 text-muted-foreground mb-4">{experience.team}</div>
+            <ul className="list-disc list-inside mb-2 ml-4 mr-6">
                 {
                     experience.highlights.map((highlight) => (
                         <li key={highlight.content} className="text-pretty">{highlight.content} {
