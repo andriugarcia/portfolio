@@ -1,6 +1,6 @@
 [
     {
-        "company": "Vonage",
+        "company": "Vonage (Nexmo / Ericsson)",
         "role": "Senior Frontend Engineer",
         "team": "Customer Dashboard",
         "baseScore": 20,
@@ -14,7 +14,7 @@
             {
                 "name": "Solution Discovery AI", 
                 "description": "A platform that uses AI to help customers discover the best solutions for their needs. It provides a user-friendly interface to make the user know what services fit their needs, and guides them through the process of selecting and implementing the right solutions.",
-                "baseScore": 10,
+                "baseScore": 30,
                 "highlights": [
                     { "content": "Built a conversational assistant platform that leverages AI to provide real-time, friendly recommendations to users. The assistant dynamically updates suggestions based on user input, ensuring an engaging and interactive experience throughout the conversation.", "keywords": ["Improved UX"], "baseScore": 10 }
                 ],
@@ -91,6 +91,39 @@
                 "stack": ["Vue.js", "Mockito", "Vue Test Utils", "Microservices"]
             },
             {
+                "name": "Solution Discovery", 
+                "description": "A conversational AI agent that based on some questions to the user, is able to find a recommendation of products of Vonage as well as an estimation of the final price.", 
+                "baseScore": 10,
+                "highlights": [
+                    { 
+                        "keywords": ["Frontend Lead", "Leadership", "Team Management"], 
+                        "baseScore": 10, 
+                        "content": "Led the frontend development team, providing technical guidance and ensuring project delivery aligned with business requirements." 
+                    },
+                    { 
+                        "keywords": ["Design System", "Reusable Components", "UI"], 
+                        "baseScore": 10, 
+                        "content": "Created a reusable system of visual components for conversation and recommendation UI, improving development efficiency and consistency across the platform." 
+                    },
+                    { 
+                        "keywords": ["TypeScript", "OpenAPI", "Validation", "Code Generation"], 
+                        "baseScore": 0, 
+                        "content": "Implemented an automatically generated TypeScript validation system through OpenAPI, ensuring type safety and reducing manual validation code." 
+                    },
+                    { 
+                        "keywords": ["Conversational AI", "Product Recommendation", "User Experience"], 
+                        "baseScore": 0, 
+                        "content": "Developed an intelligent conversation flow that guides users through product discovery and provides personalized Vonage product recommendations with pricing estimates." 
+                    },
+                    { 
+                        "keywords": ["Conversion Rate", "Business Impact", "User Analytics"], 
+                        "baseScore": 0, 
+                        "content": "Project is expected to improve the user conversion rate for all of the company's products by providing personalized product recommendations and streamlined user experience." 
+                    }
+                ],
+                "stack": ["TypeScript", "React", "OpenAPI", "Conversational AI", "Design System", "Frontend Architecture"]
+            },
+            {
                 "name": "No Code Platform", 
                 "description": "An internal no-code platform that empowers teams to effortlessly design user interfaces for seamless interaction with various APIs across the organization.",
                 "baseScore": 0,
@@ -121,7 +154,7 @@
         "team": "Freelance Development Studio",
         "startDate": "Aug 2022",
         "endDate": "Sep 2023",
-        "baseScore": 10,
+        "baseScore": 0,
         "location": "Remote",
         "highlights": [
             { "content": "Delivered 3 award-winning projects with advanced designs and animations. Awards: 2 Honorable Mentions at Awwwards, 'Site of the Day' at Mindsparkle and CSSWinner.", "keywords": ["Awarded Website", "Custom Animations"], "baseScore": 0 },
