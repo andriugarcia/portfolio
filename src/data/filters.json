@@ -43,5 +43,9 @@
     "Code Reviews": { "name": "Code Reviews", "type": "Soft Skills", "color": "grey" },
     "Documentation": { "name": "Documentation", "type": "Soft Skills", "color": "grey" },
     "Git": { "name": "Git", "type": "Build & Deployment Tools", "color": "orange" },
-    "CI/CD": { "name": "CI/CD", "type": "Build & Deployment Tools", "color": "grey" }
+    "CI/CD": { "name": "CI/CD", "type": "Build & Deployment Tools", "color": "grey" },
+    "TypeScript": { "name": "TypeScript", "type": "Programming Languages", "color": "blue" },
+    "OpenAPI": { "name": "OpenAPI", "type": "API", "color": "green" },
+    "Conversational AI": { "name": "Conversational AI", "type": "AI/ML", "color": "purple" },
+    "Frontend Architecture": { "name": "Frontend Architecture", "type": "Architecture", "color": "purple" }
 }
