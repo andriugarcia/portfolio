@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge"
 import useExperienceSearch from "@/hooks/use-experience-search"
 import type { Filter } from "@/types/filter";
 import { useEffect, useState } from "react";
-import { Github, ExternalLink, FileDown } from "lucide-react";
+import { X, ExternalLink, FileDown } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area"
 import generateResumePDF from "@/resume/resume"
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
@@ -126,24 +126,21 @@ export function Projects() {
                         <div className="flex items-center justify-between">
                           <div className="font-semibold">{ project.name } </div>
                           <div className="flex gap-2">
-                            {
-                              project.github &&  
-                              <a href={project.github} target="_blank" className="cursor-pointer">
-                                <Button variant="outline">
-                                  <Github></Github>
-                                  <ExternalLink></ExternalLink>
-                                </Button>
-                              </a>
-                            }
-                            {
-                              project.website &&  
-                              <a href={project.website} target="_blank" className="cursor-pointer">
-                                <Button>
+                            {project.github && (
+                              <Button variant="ghost" size="icon" asChild>
+                                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                  <Github />
+                                </a>
+                              </Button>
+                            )}
+                            {project.url && (
+                              <Button variant="secondary" asChild>
+                                <a href={project.url} target="_blank" rel="noopener noreferrer">
                                   <div className="hidden md:block">Visit Site</div>
                                   <ExternalLink></ExternalLink>
-                                </Button>
-                              </a>
-                            }
+                                </a>
+                              </Button>
+                            )}
                           </div>
                         </div>
                         <div className="flex flex-wrap gap-2">

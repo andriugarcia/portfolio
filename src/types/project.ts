@@ -17,6 +17,6 @@ export type Project = {
     score?: number;
     matchedKeywords?: string[];
     images: string[];
-    website?: string;
+    url?: string;
     github?: string;
 }
