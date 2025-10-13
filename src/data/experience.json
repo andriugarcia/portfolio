@@ -1,6 +1,6 @@
 [
     {
-        "company": "Vonage",
+        "company": "Vonage (Nexmo / Ericsson)",
         "role": "Senior Frontend Engineer",
         "team": "Customer Dashboard",
         "baseScore": 20,
@@ -14,7 +14,7 @@
             {
                 "name": "Solution Discovery AI", 
                 "description": "A platform that uses AI to help customers discover the best solutions for their needs. It provides a user-friendly interface to make the user know what services fit their needs, and guides them through the process of selecting and implementing the right solutions.",
-                "baseScore": 10,
+                "baseScore": 30,
                 "highlights": [
                     { "content": "Built a conversational assistant platform that leverages AI to provide real-time, friendly recommendations to users. The assistant dynamically updates suggestions based on user input, ensuring an engaging and interactive experience throughout the conversation.", "keywords": ["Improved UX"], "baseScore": 10 }
                 ],

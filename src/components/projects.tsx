@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge"
 import useExperienceSearch from "@/hooks/use-experience-search"
 import type { Filter } from "@/types/filter";
 import { useEffect, useState } from "react";
-import { X, ExternalLink, FileDown } from "lucide-react";
+import { X, ExternalLink, FileDown, Github } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area"
 import generateResumePDF from "@/resume/resume"
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
@@ -107,7 +107,7 @@ export function Projects() {
   {
     filteredExperience.map((experience) => (
         <Card key={experience.company} className="mt-5 gap-1" key={experience.company}>
-            <div className="ml-4 text-2xl text-wrap">{experience.role}</div>
+            <div className="ml-4 text-2xl text-wrap">{experience.role} <span className="text-muted-foreground font-normal text-lg">@ {experience.role}</span></div>
             <div className="ml-4 text-muted-foreground mb-4">{experience.company} - {experience.team}</div>
             <ul className="list-disc list-inside mb-2 ml-4">
                 {
