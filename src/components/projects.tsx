@@ -23,15 +23,26 @@ import { FilterBar } from "./filter-bar";
 export function Projects() {
   const [selectedFilters, setSelectedFilters] = useState<Filter[]>([]);
   const [filterMobileOpened, setFilterMobileOpened] = useState(false);
+  const [showGenerateButton, setShowGenerateButton] = useState(false);
+  const filtersPerType: { [type: string]: Filter[] } = Object.values(filtersData).reduce((acc: { [type: string]: Filter[] }, filter: Filter) => {
+    if (!acc[filter.type]) {
+      acc[filter.type] = [];
+    }
+    acc[filter.type].push(filter);
+    return acc;
+  }, {});
   const { filteredExperience, setKeywords } = useExperienceSearch();
 
   useEffect(() => {
     const url = new URL(window.location.href);
     const filterParams = url.searchParams.getAll('f');
+    const showGenerate = url.searchParams.has('generate');
     
     filterParams.forEach((filterParam) => {
       addFilter(filterParam);
     });
+
+    setShowGenerateButton(showGenerate);
   }, []);
 
   const addQueryParam = (param: string) => {
@@ -235,7 +246,9 @@ export function Projects() {
                   <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
                   <p className="text-muted-foreground text-sm mb-2">Projects I have worked on as a frontend developer</p>
                 </div>
+              {showGenerateButton && (
                 <Button onClick={() => generateResumePDF(filteredExperience)}><div className="hidden md:block">Generate Resume </div><FileDown></FileDown></Button>
+              )}
               </div>
               <FilterBar selectedFilters={selectedFilters} onFilterClick={addFilter} onClear={clearFilters} onFilterMobileOpened={() => setFilterMobileOpened(prev => !prev)}/>
             </Card>
