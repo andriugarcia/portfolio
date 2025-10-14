@@ -110,14 +110,22 @@ export function Projects() {
             {/* Desktop layout */}
             <div className="hidden md:flex items-center justify-between pr-6">
                 <div className="ml-4 text-2xl text-wrap">{experience.role} <span className="text-muted-foreground font-normal text-lg">@ {experience.company}</span></div>
-                <div className="text-muted-foreground text-sm">{experience.startDate} - {experience.endDate}</div>
+                <div className="text-muted-foreground text-sm">
+                    {experience.startDate}
+                    {experience.startDate && experience.endDate && ' - '}
+                    {experience.endDate}
+                </div>
             </div>
             
             {/* Mobile layout */}
             <div className="md:hidden ml-4 pr-6">
                 <div className="text-2xl text-wrap">{experience.role}</div>
                 <div className="text-muted-foreground font-normal text-lg">@ {experience.company}</div>
-                <div className="text-muted-foreground text-sm">{experience.startDate} - {experience.endDate}</div>
+                <div className="text-muted-foreground text-sm">
+                    {experience.startDate}
+                    {experience.startDate && experience.endDate && ' - '}
+                    {experience.endDate}
+                </div>
             </div>
             
             <div className="ml-4 text-muted-foreground mb-4">{experience.team}</div>
