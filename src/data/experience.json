@@ -36,7 +36,7 @@
                 "name": "Customer Dashboard",
                 "description": "Platform for customers to configure and get information about different company APIs. Implemented as a micro-frontend architecture, where each subpage is a separate project.",
                 "baseScore": 20,
-                "website": "https://dashboard.vonage.com/",
+                "url": "https://dashboard.vonage.com/",
                 "highlights": [
                     {
                         "content": "Refactored several products to migrate them to micro-frontends, improving modularity and maintainability.",
