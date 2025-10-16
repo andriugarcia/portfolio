@@ -230,7 +230,8 @@
         {
                 "name": "Olimaps", 
                 "description": "A virtual interaction platform developed during the COVID pandemic, enabling users to connect and engage with their local community. Conceptualized the design, architecture, and implementation to enhance user experience and foster meaningful connections.",
-                "github": "https://github.com/andriugarcia/Olimaps-Frontend",
+                "github": "https://github.com/andriugarcia/covid-social-interaction",
+                "url": "https://covid-social.andriugarcia.com",
                 "baseScore": 0,
                 "images": ["/olimaps/arch.jpeg", "/olimaps/physical-design.jpeg", "/olimaps/db.jpeg"],
                 "highlights": [
