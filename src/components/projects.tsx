@@ -133,9 +133,20 @@ export function Projects() {
                 {
                     experience.highlights.map((highlight) => (
                         <li key={highlight.content} className="text-pretty">{highlight.content} {
-                          highlight.matchedKeywords.map((kw) => (
-                            <Badge key={kw} variant="outline" className="text-xs">{kw}</Badge>
-                          ))
+                          highlight.matchedKeywords.map((kw) => {
+                            const filter = (filtersData as { [type: string]: Filter })[kw];
+                            const isSelected = selectedFilters.find(filter => filter.name === kw);
+                            return (
+                                <Badge 
+                                    key={kw} 
+                                    variant={isSelected ? 'default' : 'outline'} 
+                                    className="text-xs"
+                                    color={filter?.color}
+                                >
+                                    {kw}
+                                </Badge>
+                            );
+                          })
                         }</li>
                     ))
                 }
@@ -165,9 +176,19 @@ export function Projects() {
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {
-                                project.stack.map((tech) => (
-                                    <Badge key={tech} variant={selectedFilters.find(filter => filter.name === tech) ? 'default' : 'outline'}>{tech}</Badge>
-                                ))
+                                project.stack.map((tech) => {
+                                    const filter = (filtersData as { [type: string]: Filter })[tech];
+                                    const isSelected = selectedFilters.find(filter => filter.name === tech);
+                                    return (
+                                        <Badge 
+                                            key={tech} 
+                                            variant={isSelected ? 'default' : 'outline'}
+                                            color={filter?.color}
+                                        >
+                                            {tech}
+                                        </Badge>
+                                    );
+                                })
                             }
                         </div>
                         <div>
@@ -180,9 +201,20 @@ export function Projects() {
                               {
                                   project.highlights.map((highlight) => (
                                       <li key={highlight.content} className="text-pretty text-purple-50">{highlight.content} {
-                                        highlight.matchedKeywords.map((kw) => (
-                                          <Badge key={kw} variant="outline" className="text-xs">{kw}</Badge>
-                                        ))
+                                        highlight.matchedKeywords.map((kw) => {
+                                            const filter = (filtersData as { [type: string]: Filter })[kw];
+                                            const isSelected = selectedFilters.find(filter => filter.name === kw);
+                                            return (
+                                                <Badge 
+                                                    key={kw} 
+                                                    variant='ghost' 
+                                                    className="text-xs"
+                                                    color={filter?.color}
+                                                >
+                                                    {kw}
+                                                </Badge>
+                                            );
+                                        })
                                       }</li>
                                   ))
                               }
