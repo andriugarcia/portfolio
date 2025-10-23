@@ -6,7 +6,11 @@ import experienceData from "@/data/experience.json";
 const KEYWORD_MATCH_SCORE = 20;
 const MAX_COMPANIES = 2;
 const MAX_PROJECTS = 3;
-const MAX_HIGHLIGHTS = 5;
+const MAX_HIGHLIGHTS = 12;
+
+// Filter specificity scoring constants
+const BASE_FILTER_SCORE = 10; // Minimum score for any filter match
+const SPECIFICITY_MULTIPLIER = 30; // Maximum additional score for rare filters
 declare global {
     interface Array<T> {
         prepare(limit: number, callback?: (item: T) => any): T[];
@@ -25,6 +29,58 @@ Array.prototype.prepare = function<T>(limit: number, callback?: (item: T) => any
 export default function useExperienceSearch() {
     const [keywords, setKeywords] = useState<Filter[]>([]);
     const experience: Experience[] = experienceData;
+
+    // Calculate filter frequency across all experience data for specificity scoring
+    const filterFrequency = useMemo(() => {
+        const frequency: { [key: string]: number } = {};
+        
+        experience.forEach(company => {
+            // Count filters in company highlights
+            company.highlights.forEach(highlight => {
+                highlight.keywords.forEach(keyword => {
+                    const normalizedKeyword = keyword.toLowerCase();
+                    frequency[normalizedKeyword] = (frequency[normalizedKeyword] || 0) + 1;
+                });
+            });
+            
+            // Count filters in project highlights
+            company.projects.forEach(project => {
+                project.highlights.forEach(highlight => {
+                    highlight.keywords.forEach(keyword => {
+                        const normalizedKeyword = keyword.toLowerCase();
+                        frequency[normalizedKeyword] = (frequency[normalizedKeyword] || 0) + 1;
+                    });
+                });
+                
+                // Count filters in project stack
+                project.stack.forEach(tech => {
+                    const normalizedTech = tech.toLowerCase();
+                    frequency[normalizedTech] = (frequency[normalizedTech] || 0) + 1;
+                });
+            });
+        });
+        
+        return frequency;
+    }, [experience]);
+
+    // Calculate specificity score for a filter based on its frequency
+    const calculateFilterSpecificityScore = (filterName: string): number => {
+        const normalizedFilter = filterName.toLowerCase();
+        const frequency = filterFrequency[normalizedFilter] || 0;
+        
+        if (frequency === 0) return BASE_FILTER_SCORE;
+        
+        // Calculate the maximum frequency to normalize scores
+        const maxFrequency = Math.max(...Object.values(filterFrequency));
+        
+        // Inverse relationship: less frequent = higher score
+        // Filters appearing only once get the maximum bonus
+        // Most common filters get only the base score
+        const specificityRatio = Math.max(0, (maxFrequency - frequency) / maxFrequency);
+        const specificityBonus = specificityRatio * SPECIFICITY_MULTIPLIER;
+        
+        return BASE_FILTER_SCORE + specificityBonus;
+    };
 
     // There's no limit of companies, but there's a limit of 5 projects no matter their company, so companies are implicitly limited
     // There's a limit of 15 highlights, no matter how are they distributed, the can be in the same company or project or in different, depending of their score
@@ -45,9 +101,12 @@ export default function useExperienceSearch() {
             // Score company highlights
             const scoredCompanyHighlights = company.highlights.map(highlight => {
                 const matchedKeywords = highlight.keywords.filter(k => keywordValues.includes(k.toLowerCase()));
+                const specificityScore = matchedKeywords.reduce((sum, keyword) => 
+                    sum + calculateFilterSpecificityScore(keyword), 0);
+                
                 return {
                     ...highlight,
-                    score: highlight.baseScore + (matchedKeywords.length > 0 ? KEYWORD_MATCH_SCORE : 0),
+                    score: highlight.baseScore + specificityScore,
                     matchedKeywords
                 };
             });
@@ -56,22 +115,28 @@ export default function useExperienceSearch() {
             const scoredProjects = company.projects.map(project => {
                 const scoredProjectHighlights = project.highlights.map(highlight => {
                     const matchedKeywords = highlight.keywords.filter(k => keywordValues.includes(k.toLowerCase()));
+                    const specificityScore = matchedKeywords.reduce((sum, keyword) => 
+                        sum + calculateFilterSpecificityScore(keyword), 0);
+                    
                     return {
                         ...highlight,
-                        score: highlight.baseScore + matchedKeywords.length * KEYWORD_MATCH_SCORE,
+                        score: highlight.baseScore + specificityScore,
                         matchedKeywords
                     };
                 });
-    
+
                 const matchedStackKeywords = project.stack.filter(tech => keywordValues.includes(tech.toLowerCase()));
+                const stackSpecificityScore = matchedStackKeywords.reduce((sum, tech) => 
+                    sum + calculateFilterSpecificityScore(tech), 0);
+                
                 const orderedStack = [
                     ...matchedStackKeywords,
                     ...project.stack.filter(tech => !keywordValues.includes(tech.toLowerCase()))
                 ];
                 const projectScore = project.baseScore + 
-                    matchedStackKeywords.length * KEYWORD_MATCH_SCORE +
+                    stackSpecificityScore +
                     scoredProjectHighlights.reduce((sum, h) => sum + h.score, 0);
-    
+
                 return {
                     ...project,
                     score: projectScore,
@@ -79,9 +144,7 @@ export default function useExperienceSearch() {
                     stack: orderedStack,
                     highlights: scoredProjectHighlights
                 };
-            });
-    
-            // Calculate total company score including projects
+            });            // Calculate total company score including projects
             const totalScore = companyScore + 
                 scoredProjects.reduce((sum, p) => sum + p.score, 0) +
                 scoredCompanyHighlights.reduce((sum, h) => sum + h.score, 0);

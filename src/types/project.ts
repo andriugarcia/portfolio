@@ -16,7 +16,8 @@ export type Project = {
     highlights: Highlight[];
     score?: number;
     matchedKeywords?: string[];
-    images: string[];
+    images?: string[];
     url?: string;
     github?: string;
+    website?: string;
 }
