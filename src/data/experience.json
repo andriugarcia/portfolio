@@ -27,9 +27,9 @@
                         "content": "Created a reusable system of visual components for conversation and recommendation UI, improving development efficiency and consistency across the platform." 
                     },
                     { 
-                        "keywords": ["TypeScript", "OpenAPI", "Validation", "Code Generation"], 
+                        "keywords": ["Typescript", "OpenAPI", "Validation", "Code Generation"], 
                         "baseScore": 0, 
-                        "content": "Implemented an automatically generated TypeScript validation system through OpenAPI, ensuring type safety and reducing manual validation code." 
+                        "content": "Implemented an automatically generated Typescript validation system through OpenAPI, ensuring type safety and reducing manual validation code." 
                     },
                     { 
                         "keywords": ["Conversational AI", "Product Recommendation", "User Experience"], 
@@ -42,7 +42,7 @@
                         "content": "Project is expected to improve the user conversion rate for all of the company's products by providing personalized product recommendations and streamlined user experience." 
                     }
                 ],
-                "stack": ["TypeScript", "React", "OpenAPI", "Conversational AI", "Design System", "Frontend Architecture"]
+                "stack": ["Typescript", "React", "OpenAPI", "Conversational AI", "Design System", "Frontend Architecture"]
             },
             {
                 "name": "Dashboard Components Library", 
