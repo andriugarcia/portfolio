@@ -236,11 +236,11 @@ export function Projects() {
                             <CarouselContent>
                               {project.images.map((src, index) => (
                                 <CarouselItem key={index} className="basis-auto">
-                                  <div className="">
+                                  <a href={src} className="" target="_blank">
                                     <Card className="h-60 py-0">
                                       <img className="h-full w-full md:w-auto rounded-xl" src={src} alt="" />
                                     </Card>
-                                  </div>
+                                  </a>
                                 </CarouselItem>
                               ))}
                             </CarouselContent>
