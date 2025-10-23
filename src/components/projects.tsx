@@ -106,19 +106,47 @@ export function Projects() {
   const ProjectList = () => (<>
   {
     filteredExperience.map((experience) => (
-        <Card key={experience.company} className="mt-5 gap-1" key={experience.company}>
-            <div className="flex items-center justify-between">
-                <div className="ml-4 text-2xl text-wrap">{experience.role} <span className="text-muted-foreground font-normal text-lg">@ {experience.role}</span></div>
-                <div className="text-muted-foreground text-sm">{experience.startDate} - {experience.endDate}</div>
+        <Card key={experience.company} className="mt-5 gap-1">
+            {/* Desktop layout */}
+            <div className="hidden md:flex items-center justify-between pr-6">
+                <div className="ml-4 text-2xl text-wrap">{experience.role} <span className="text-muted-foreground font-normal text-lg">@ {experience.company}</span></div>
+                <div className="text-muted-foreground text-sm">
+                    {experience.startDate}
+                    {experience.startDate && experience.endDate && ' - '}
+                    {experience.endDate}
+                </div>
             </div>
-            <div className="ml-4 text-muted-foreground mb-4">{experience.company} - {experience.team}</div>
-            <ul className="list-disc list-inside mb-2 ml-4">
+            
+            {/* Mobile layout */}
+            <div className="md:hidden ml-4 pr-6">
+                <div className="text-2xl text-wrap">{experience.role}</div>
+                <div className="text-muted-foreground font-normal text-lg">@ {experience.company}</div>
+                <div className="text-muted-foreground text-sm">
+                    {experience.startDate}
+                    {experience.startDate && experience.endDate && ' - '}
+                    {experience.endDate}
+                </div>
+            </div>
+            
+            <div className="ml-4 text-muted-foreground mb-4">{experience.team}</div>
+            <ul className="list-disc list-inside mb-2 ml-4 pr-6">
                 {
                     experience.highlights.map((highlight) => (
                         <li key={highlight.content} className="text-pretty">{highlight.content} {
-                          highlight.matchedKeywords.map((kw) => (
-                            <Badge key={kw} variant="outline" className="text-xs">{kw}</Badge>
-                          ))
+                          highlight.matchedKeywords.map((kw) => {
+                            const filter = (filtersData as { [type: string]: Filter })[kw];
+                            const isSelected = selectedFilters.find(filter => filter.name === kw);
+                            return (
+                                <Badge 
+                                    key={kw} 
+                                    variant={isSelected ? 'default' : 'outline'} 
+                                    className="text-xs"
+                                    color={filter?.color}
+                                >
+                                    {kw}
+                                </Badge>
+                            );
+                          })
                         }</li>
                     ))
                 }
@@ -148,9 +176,19 @@ export function Projects() {
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {
-                                project.stack.map((tech) => (
-                                    <Badge key={tech} variant={selectedFilters.find(filter => filter.name === tech) ? 'default' : 'outline'}>{tech}</Badge>
-                                ))
+                                project.stack.map((tech) => {
+                                    const filter = (filtersData as { [type: string]: Filter })[tech];
+                                    const isSelected = selectedFilters.find(filter => filter.name === tech);
+                                    return (
+                                        <Badge 
+                                            key={tech} 
+                                            variant={isSelected ? 'default' : 'outline'}
+                                            color={filter?.color}
+                                        >
+                                            {tech}
+                                        </Badge>
+                                    );
+                                })
                             }
                         </div>
                         <div>
@@ -163,9 +201,20 @@ export function Projects() {
                               {
                                   project.highlights.map((highlight) => (
                                       <li key={highlight.content} className="text-pretty text-purple-50">{highlight.content} {
-                                        highlight.matchedKeywords.map((kw) => (
-                                          <Badge key={kw} variant="outline" className="text-xs">{kw}</Badge>
-                                        ))
+                                        highlight.matchedKeywords.map((kw) => {
+                                            const filter = (filtersData as { [type: string]: Filter })[kw];
+                                            const isSelected = selectedFilters.find(filter => filter.name === kw);
+                                            return (
+                                                <Badge 
+                                                    key={kw} 
+                                                    variant='ghost' 
+                                                    className="text-xs"
+                                                    color={filter?.color}
+                                                >
+                                                    {kw}
+                                                </Badge>
+                                            );
+                                        })
                                       }</li>
                                   ))
                               }
@@ -187,11 +236,11 @@ export function Projects() {
                             <CarouselContent>
                               {project.images.map((src, index) => (
                                 <CarouselItem key={index} className="basis-auto">
-                                  <div className="">
+                                  <a href={src} className="" target="_blank">
                                     <Card className="h-60 py-0">
                                       <img className="h-full w-full md:w-auto rounded-xl" src={src} alt="" />
                                     </Card>
-                                  </div>
+                                  </a>
                                 </CarouselItem>
                               ))}
                             </CarouselContent>
