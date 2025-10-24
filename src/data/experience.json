@@ -82,7 +82,7 @@
             {
                 "name": "Partner Management Portal", 
                 "description": "A platform for partners to manage their accounts, view analytics, and access resources. Developed as a micro-frontend to allow independent development and deployment across teams.", 
-                "website": "https://management.vonage.com/",
+                "url": "https://management.vonage.com/",
                 "highlights": [
                     { 
                         "keywords": [],
@@ -168,7 +168,7 @@
             {
                 "name": "Landing Page for Marketing Agency", 
                 "description": "", 
-                "website": "https://zandbeek.com/",
+                "url": "https://zandbeek.com/",
                 "highlights": [
                     {"content": "", "keywords": [""]}
                 ],
@@ -178,7 +178,7 @@
             {
                 "name": "Real Estate", 
                 "description": "",
-                "website": "https://layers-development.nl/",
+                "url": "https://layers-development.nl/",
                 "highlights": [
                     { "keywords": [], "content": ""}
                 ], 
@@ -199,11 +199,11 @@
         ],
         "projects": [
         {
-                "name": "Olimaps", 
+                "name": "COVID neighborhood social network", 
                 "description": "A virtual interaction platform developed during the COVID pandemic, enabling users to connect and engage with their local community. Conceptualized the design, architecture, and implementation to enhance user experience and foster meaningful connections.",
                 "github": "https://github.com/andriugarcia/covid-social-interaction",
                 "url": "https://covid-social.andriugarcia.com",
-                "images": ["/olimaps/arch.jpeg", "/olimaps/physical-design.jpeg", "/olimaps/db.jpeg"],
+                "images": ["/olimaps/app-mobile.png", "/olimaps/arch.jpeg", "/olimaps/physical-design.jpeg", "/olimaps/db.jpeg"],
                 "highlights": [
                     { "keywords": ["Improved UX"], "content": "Optimized user experience through UI design using Figma, such as allowing users to access the application without registration, enabling one-step registration, placing frequently used actions near the thumb area, or utilizing levels of detail in posts"},
                     { "keywords": ["State Management"], "content": "Architected frontend using Vuex to deliver a robust real-time information system centralising data sources such as REST, sockets, in-app notifications, and PUSH notifications"},
@@ -229,7 +229,7 @@
             {
                 "name": "Notion Graph View", 
                 "description": "A tool that visualizes your entire Notion workspace as an interactive graph, allowing you to explore how pages are connected to each other and through databases. Easily discover relationships, navigate between linked content, and gain insights into your workspace structure.",
-                "website": "https://www.notion.so/Graph-139abe7b7d0280948c2bdf75ea07dd13?duplicate=true&pvs=36&utm_source=public_page&utm_content=duplicate_button&tid=8ebfc22b0ee542819fba99f0d57879e6&from=public_page&n=duplicate_public_page",
+                "url": "https://www.notion.so/Graph-139abe7b7d0280948c2bdf75ea07dd13?duplicate=true&pvs=36&utm_source=public_page&utm_content=duplicate_button&tid=8ebfc22b0ee542819fba99f0d57879e6&from=public_page&n=duplicate_public_page",
                 "highlights": [
                     { "keywords": [""], "content": ""}
                 ], 
