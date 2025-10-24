@@ -5,6 +5,18 @@ html {
   overflow: hidden;
 }
 
+/* Mobile viewport fix for dynamic browser UI */
+:root {
+  --vh: 1vh;
+  --mobile-vh: 1vh;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --mobile-vh: 1dvh;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -120,5 +132,20 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Mobile-safe viewport utilities */
+@layer utilities {
+  .h-screen-mobile {
+    height: calc(var(--mobile-vh, 1vh) * 100);
+  }
+  
+  .min-h-screen-mobile {
+    min-height: calc(var(--mobile-vh, 1vh) * 100);
+  }
+  
+  .max-h-screen-mobile {
+    max-height: calc(var(--mobile-vh, 1vh) * 100);
   }
 }
