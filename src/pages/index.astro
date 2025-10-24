@@ -23,6 +23,21 @@ import SplashCursor from '@/components/animations/SplashCursor'
 		});
 		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 	}
+
+	// Mobile viewport height fix
+	function setMobileVH() {
+		const vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+		
+		// Fallback for browsers that don't support dvh
+		if (!CSS.supports('height', '100dvh')) {
+			document.documentElement.style.setProperty('--mobile-vh', `${vh}px`);
+		}
+	}
+	
+	setMobileVH();
+	window.addEventListener('resize', setMobileVH);
+	window.addEventListener('orientationchange', setMobileVH);
 </script>
  
 <html lang="en">
@@ -34,7 +49,7 @@ import SplashCursor from '@/components/animations/SplashCursor'
 		<title>Andriu Garcia - Frontend Developer</title>
 	</head>
  
-	<body class="h-screen flex justify-center">
+	<body class="h-screen-mobile flex justify-center">
 		<div class="w-full max-w-[1200px] pt-2 md:pt-4 px-2 md:px-4 flex flex-col">
 			<SplashCursor client:load/>
 			<Navbar client:load />
