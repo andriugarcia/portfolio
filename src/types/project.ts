@@ -1,7 +1,7 @@
 export type Highlight = {
     content: string;
-    baseScore: number;
-    keywords: string[];
+    keywords?: string[];
+    priority?: boolean;
     source?: string;
     projectName?: string;
     score?: number;
@@ -11,12 +11,13 @@ export type Highlight = {
 export type Project = {
     name: string;
     description: string;
-    baseScore: number;
-    stack: string[];
-    highlights: Highlight[];
+    priority?: boolean;
+    stack?: string[];
+    highlights?: Highlight[];
     score?: number;
     matchedKeywords?: string[];
-    images: string[];
+    images?: string[];
     url?: string;
     github?: string;
+    website?: string;
 }

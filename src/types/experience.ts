@@ -7,9 +7,9 @@ export type Experience = {
     location: string;
     startDate: string;
     endDate: string;
-    baseScore: number;
-    highlights: Highlight[];
-    projects: Project[];
+    priority?: boolean;
+    highlights?: Highlight[];
+    projects?: Project[];
     score?: number;
     matchedKeywords?: string[];
 }

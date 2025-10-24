@@ -131,9 +131,9 @@ export function Projects() {
             <div className="ml-4 text-muted-foreground mb-4">{experience.team}</div>
             <ul className="list-disc list-inside mb-2 ml-4 pr-6">
                 {
-                    experience.highlights.map((highlight) => (
+                    experience.highlights?.map((highlight) => (
                         <li key={highlight.content} className="text-pretty">{highlight.content} {
-                          highlight.matchedKeywords.map((kw) => {
+                          highlight.matchedKeywords?.map((kw) => {
                             const filter = (filtersData as { [type: string]: Filter })[kw];
                             const isSelected = selectedFilters.find(filter => filter.name === kw);
                             return (
@@ -152,7 +152,7 @@ export function Projects() {
                 }
             </ul>
             {
-                experience.projects.map((project) => (
+                experience.projects?.map((project) => (
                     <Card color={getRandomColor()} className="relative px-4 mb-2 mx-3" key={project.name}>
                         <div className="flex items-center justify-between">
                           <div className="font-semibold">{ project.name } </div>
@@ -176,7 +176,7 @@ export function Projects() {
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {
-                                project.stack.map((tech) => {
+                                project.stack?.map((tech) => {
                                     const filter = (filtersData as { [type: string]: Filter })[tech];
                                     const isSelected = selectedFilters.find(filter => filter.name === tech);
                                     return (
@@ -199,9 +199,9 @@ export function Projects() {
                           <div className="text-muted-foreground font-bold tracking-wider text-purple-50/70 mb-2">HIGHLIGHTS</div>
                           <ul className="list-disc list-inside">
                               {
-                                  project.highlights.map((highlight) => (
+                                  project.highlights?.map((highlight) => (
                                       <li key={highlight.content} className="text-pretty text-purple-50">{highlight.content} {
-                                        highlight.matchedKeywords.map((kw) => {
+                                        highlight.matchedKeywords?.map((kw) => {
                                             const filter = (filtersData as { [type: string]: Filter })[kw];
                                             const isSelected = selectedFilters.find(filter => filter.name === kw);
                                             return (
