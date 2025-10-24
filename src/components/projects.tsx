@@ -255,17 +255,21 @@ export function Projects() {
                             <div className="grid gap-2">
                               {project.images.map((src, index) => (
                                 index % 2 === 0 ? (
-                                <Card key={src} className="py-0">
-                                  <img className="rounded-xl" src={src} alt="" />
-                                </Card>) : null
+                                <a href={src} className="" target="_blank" key={src}>
+                                  <Card className="py-0">
+                                    <img className="rounded-xl" src={src} alt="" />
+                                  </Card>
+                                </a>) : null
                               ))}
                             </div>
                             <div className="grid gap-2">
                               {project.images.map((src, index) => (
                                 index % 2 !== 0 ? (
-                                  <Card key={src} className="py-0 h-fit">
-                                    <img className="rounded-xl" src={src} alt="" />
-                                  </Card>) : null
+                                  <a href={src} className="" target="_blank" key={src}>
+                                    <Card className="py-0 h-fit">
+                                      <img className="rounded-xl" src={src} alt="" />
+                                    </Card>
+                                  </a>) : null
                               ))}
                             </div>
                           </div>
