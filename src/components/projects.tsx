@@ -132,7 +132,7 @@ export function Projects() {
             <ul className="list-disc list-inside mb-2 ml-4 pr-6">
                 {
                     experience.highlights?.map((highlight) => (
-                        <li key={highlight.content} className="text-pretty">{highlight.content} {
+                        <li key={highlight.content} className="text-pretty mb-3">{highlight.content} {
                           highlight.matchedKeywords?.map((kw) => {
                             const filter = (filtersData as { [type: string]: Filter })[kw];
                             const isSelected = selectedFilters.find(filter => filter.name === kw);
@@ -200,7 +200,7 @@ export function Projects() {
                           <ul className="list-disc list-inside">
                               {
                                   project.highlights?.map((highlight) => (
-                                      <li key={highlight.content} className="text-pretty text-purple-50">{highlight.content} {
+                                      <li key={highlight.content} className="text-pretty text-purple-50 mb-3">{highlight.content} {
                                         highlight.matchedKeywords?.map((kw) => {
                                             const filter = (filtersData as { [type: string]: Filter })[kw];
                                             const isSelected = selectedFilters.find(filter => filter.name === kw);
