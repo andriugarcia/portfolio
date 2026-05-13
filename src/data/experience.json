@@ -8,7 +8,11 @@
         "endDate": "present",
         "location": "Remote",
         "highlights": [
-            { "content": "Led frontend development for over 2 teams and more than 10 projects. Created detailed documentation and shared architectural decisions across multiple teams. Collaborated in peer programming sessions with developers, conducted technical interviews, and performed code reviews to uphold high coding standards and foster team development.", "keywords": [""], "priority": true }
+            { "content": "Led frontend development for over 2 teams and more than 10 projects. Created detailed documentation and shared architectural decisions across multiple teams. Collaborated in peer programming sessions with developers, conducted technical interviews, and performed code reviews to uphold high coding standards and foster team development.", "keywords": [""], "priority": true },
+            { "content": "Spearheaded the transition to AI-assisted development within the team, implementing comprehensive CI/CD automations that integrate with GitHub issues for streamlined workflows.", "keywords": ["Generative AI", "CI/CD", "GitHub", "Automation"], "priority": true },
+            { "content": "Deployed generative AI tracking tools for development analytics and automated AI integration into CI/CD pipelines to maximize efficiency and reduce manual overhead.", "keywords": ["Generative AI", "CI/CD", "Automation", "DevOps"], "priority": true },
+            { "content": "Drastically reduced cycle time by automating the deployment process through migration from Jenkins to GitHub Actions across more than 20 projects, maintaining human oversight with detailed approval and review processes when necessary, enabled by a centralized workflow initiative.", "keywords": ["GitHub Actions", "CI/CD", "Automation", "Deployment", "DevOps"], "priority": true },
+            { "content": "Improved deployment in development by implementing parallel branch deployments to eliminate environment sharing conflicts, synergizing with automated deployment and GitHub Copilot in issues to enable complete task execution without local environment dependencies.", "keywords": ["Deployment", "CI/CD", "GitHub Copilot", "Automation", "DevOps"], "priority": true }
         ],
         "projects": [
             {
